@@ -8,23 +8,17 @@ use Validator;
 
 class UsersController extends Controller {
 
-	protected $user;
-
-	public function __construct(User $user)
-	{
-		$this->user = $user;
-	}
-
+	
 	public function index()
 	{
-		$users = $this->user->all();
+		$users = User::all();
 
 		return View::make('users/index')->withUsers($users);
 	}
 
 	public function show($username)
 	{
-		$user = $this->user->whereUsername($username)->first();
+		$user = User::whereUsername($username)->first();
 
 		return View::make('users/show', ['user' => $user]);
 	}
@@ -36,18 +30,19 @@ class UsersController extends Controller {
 
 	public function store()
 	{
-		if(! $this->user->isValid(Input::all()))
+
+		if(! User::isValid(Input::all()))
 		{
-			return Redirect::back()->withInput()->withErrors($this->user->errors);
+			return Redirect::back()->withInput()->withErrors(User::$errors);
 		}
 
-		/* 
+		
 		$user = new User;
+		$user->email = Input::get('email');
 		$user->username = Input::get('username');
 		$user->password = Hash::make(Input::get('password'));
-		$user->save();*/
+		$user->save();
 
-		$this->user->create(Input::all());
 
 		return Redirect::route('users.index');
 	}

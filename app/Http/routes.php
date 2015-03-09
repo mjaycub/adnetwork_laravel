@@ -1,5 +1,6 @@
 <?php
 use \App\User as User;
+use \App\Http\Middleware;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,32 +13,18 @@ use \App\User as User;
 */
 
 
-/*
 Route::get('/', 'PagesController@home');
 
 Route::get('/about', 'PagesController@about');
-*/
-
-/* $user = new User;
-	$user->username = 'NewUser';
-	$user->password = Hash::make('password');
-	$user->save(); 
-
-	$user = User::find(2);
-	$user->username = 'UpdatedName';
-	$user->save();
-
-	$user = User::find(2);
-	$user->delete();*/
-/*
-Route::get('users', 'UsersController@index');
-
-Route::get('users/{username}', 'UsersController@show');
-
-Route::get('users/new', 'UsersController@create');*/
 
 Route::resource('users', 'UsersController');
+Route::get('login', 'SessionsController@create');
+Route::get('logout', 'SessionsController@destroy');
+Route::resource('sessions', 'SessionsController');
 
+
+
+Route::get('admin', ['middleware' => 'auth', 'uses' => 'PagesController@admin']);
 
 /* 
 Route::controllers([

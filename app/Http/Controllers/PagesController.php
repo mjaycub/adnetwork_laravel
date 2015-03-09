@@ -4,7 +4,7 @@ class PagesController extends Controller {
 	
 	public function home()
 	{
-		$name = 'Mark';
+		$name = 'You';
 
 		return view('index')->with('name', $name);
 	}
@@ -12,5 +12,10 @@ class PagesController extends Controller {
 	public function about()
 	{
 		return view('about');
+	}
+
+	public function admin()
+	{
+		return view('admin');
 	}
 }

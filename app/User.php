@@ -15,10 +15,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public static $rules = [
 		'username' => 'required', 
+		'email' => 'required',
 		'password' => 'required'
 		];
 
-	public $errors;
+	public static $errors;
 	/**
 	 * The database table used by the model.
 	 *
@@ -31,7 +32,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['username', 'password'];
+	protected $fillable = ['username', 'email', 'password'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -40,7 +41,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-	public function isValid($data)
+	public static function isValid($data)
 	{
 		$validation = Validator::make($data, static::$rules);
 
@@ -49,7 +50,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 			return true;
 		}
 
-		$this->errors = $validation->messages();
+		static::$errors = $validation->messages();
 		return false;
 	}
 

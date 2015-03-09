@@ -1,8 +1,5 @@
-<html>
-	<head>
-		
-	</head>
-	<body>
-		<h1> About Page</h1>
-	</body>
-</html>
+@extends('layouts.default')
+
+@section('content')
+	<h1>About Page</h1>
+@stop
