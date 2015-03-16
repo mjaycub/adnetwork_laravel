@@ -35,7 +35,8 @@ class ProfilesController extends Controller {
 			//return Redirect::to('/users/')->withErrors('No user registered under the name: ' . $username);
 			// Log 404 error with requested URL. URL is /{$username}
 			Log::warning('404 caught in ProfilesController.', ['context' => 'Requested username,URL: /' . $username]);	
-			abort(404);
+			//abort(404);
+			return Redirect::to('/404');
 			//Session::flash('message', 'No user registered under the name: ' . $username); 
 			//Session::flash('alert-class', 'alert-danger'); 
 		}

@@ -14,6 +14,11 @@ class PagesController extends Controller {
 		return view('about');
 	}
 
+	public function error()
+	{
+		abort(404);
+	}
+
 	public function admin()
 	{
 		return view('admin');

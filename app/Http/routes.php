@@ -12,19 +12,25 @@ use \App\Http\Middleware;
 |
 */
 
-
+# Home
 Route::get('/', 'PagesController@home');
-
 Route::get('/about', 'PagesController@about');
+Route::get('/404', 'PagesController@error');
 
+# Users
 Route::resource('users', 'UsersController');
+
+# Authentication
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
 Route::resource('sessions', 'SessionsController');
 
-
-
+# User-accessed page
 Route::get('admin', ['middleware' => 'auth', 'uses' => 'PagesController@admin']);
+
+
+#User Profiles
+Route::get('/{profile}', 'ProfilesController@show');
 
 /* 
 Route::controllers([

@@ -6,6 +6,7 @@ use Hash;
 use Input;
 use Redirect;
 use Validator;
+use Session;
 
 class SessionsController extends Controller{
 	
@@ -20,12 +21,30 @@ class SessionsController extends Controller{
 
 	public function store()
 	{
-		if(Auth::attempt(Input::only('email', 'password')))
+		$rules = array(
+			'email' => 'required|email',
+			'password' => 'required|alphanum'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if($validator->fails()){
+			return Redirect::to('/login')
+				->withErrors($validator)
+				->withInput();
+		}
+		else
 		{
-			return Redirect::to('/admin');
+			if(Auth::attempt(Input::only('email', 'password')))
+			{
+				return Redirect::to('/admin');
+			}
+			Session::flash('message', 'Incorrect username/password combination. Please try again.'); 
+			Session::flash('alert-class', 'alert-danger'); 
+			return Redirect::back()->withInput();
 		}
 
-		return Redirect::back()->withInput();
+		
 	}
 
 	public function destroy()
