@@ -1,10 +1,18 @@
 <?php namespace App\Http\Controllers;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Session;
 use \App\User;
 use View;
 use Hash;
 use Input;
 use Redirect;
 use Validator;
+use Log;
+
+use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class UsersController extends Controller {
 
@@ -45,6 +53,27 @@ class UsersController extends Controller {
 
 
 		return Redirect::route('users.index');
+	}
+
+	public function show($username)
+	{
+		//taken from ProfilesController, which is now retired
+		try
+		{
+			$user = User::whereUsername($username)->firstOrFail();
+		}
+		catch(ModelNotFoundException $e)
+		{
+			//return Redirect::to('/users/')->withErrors('No user registered under the name: ' . $username);
+			// Log 404 error with requested URL. URL is /{$username}
+			Log::warning('404 caught in UsersController.', ['context' => 'Requested username,URL: /users/' . $username]);	
+			//abort(404);
+			return Redirect::to('/404');
+			//Session::flash('message', 'No user registered under the name: ' . $username); 
+			//Session::flash('alert-class', 'alert-danger'); 
+		}
+		
+		return View::make('profiles.show');
 	}
 
 }

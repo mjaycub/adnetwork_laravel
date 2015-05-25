@@ -30,7 +30,11 @@ Route::get('admin', ['middleware' => 'auth', 'uses' => 'PagesController@admin'])
 
 
 #User Profiles
-Route::get('/{profile}', 'ProfilesController@show');
+/*
+|  User profiles handles by UsersController
+|	- profiles now at /users/{profile} instead of /{profile}
+*/
+# Route::get('/{profile}', 'ProfilesController@show');
 
 /* 
 Route::controllers([
