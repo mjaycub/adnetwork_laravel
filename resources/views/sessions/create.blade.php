@@ -1,4 +1,3 @@
-
 @extends('layouts.default')
 
 @section('content')
@@ -8,24 +7,24 @@
 				<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
 			</div>
 		@endif
-		<div>
+		
 		{!! Form::open(['route' => 'sessions.store']) !!}
-		<div>
-			{!! Form::label('email', 'Email: ') !!}
-			{!! Form::email('email') !!}
-			{!! $errors->first('email', '<span class=error>:message</span>') !!}
-		</div> 
+			<div class="form-group">
+				{!! Form::label('email', 'Email:') !!}
+				{!! Form::email('email', null, ['class' => 'form-control']) !!}
+				{!! $errors->first('email', '<span class=error>:message</span>') !!}
+			</div> 
 
-		<div>
-			{!! Form::label('password', 'Password: ') !!}
-			{!! Form::password('password') !!}
-			{!! $errors->first('password') !!}
-		</div>
+			<div class="form-group">
+				{!! Form::label('password', 'Password:') !!}
+				{!! Form::password('password', array('placeholder'=>'', 'class'=>'form-control' )) !!}
+				{!! $errors->first('password') !!}
+			</div>
 
-		<div>
-			{!! Form::submit('Login') !!}
-		</div>
+			<div class="form-group">
+				{!! Form::submit('Login', ['class' => 'btn btn-primary']) !!}
+			</div>
 
 		{!! Form::close() !!}
-	</div>
+		
 @stop

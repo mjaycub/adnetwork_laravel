@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use \App\Profile;
 use Session;
 use \App\User;
 use View;
@@ -24,7 +25,8 @@ class ProfilesController extends Controller {
 	 * @param  $username
 	 * @return Response
 	 */
-	public function show($username)
+	
+	/* public function show($username)
 	{
 		try
 		{
@@ -42,6 +44,31 @@ class ProfilesController extends Controller {
 		}
 		
 		return View::make('profiles.show');
+	} */
+
+	public function edit($username)
+	{
+		$user = User::whereUsername($username)->firstOrFail();
+		return View::make('profiles.edit')->withUser($user);
+	}
+
+	public function update($username)
+	{
+		$user = User::whereUsername($username)->firstOrFail();
+		$input = Input::only('bio', 'location', 'youtube_username', 'twitter_username', 'instagram_username', 'facebook_page_name', 'vine_username');
+
+		if (count($user->profile))
+		{   
+		    $user->profile->fill($input)->save();
+		}
+		else
+		{
+		    $profile = Profile::create($input);
+
+		    $user->profile()->save($profile);
+		}
+
+		return redirect()->back();
 	}
 
 	

@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Session;
 use \App\User;
+use \App\Profile;
 use View;
 use Hash;
 use Input;
@@ -37,20 +38,27 @@ class UsersController extends Controller {
 	}
 
 	public function store()
-	{
+	{		
 
 		if(! User::isValid(Input::all()))
 		{
+			Session::flash('message', 'There were problems with your inputs. Please correct and re-submit.'); 
+			Session::flash('alert-class', 'alert-danger'); 
 			return Redirect::back()->withInput()->withErrors(User::$errors);
+			#return Redirect::back()->withInput();
 		}
 
-		
 		$user = new User;
 		$user->email = Input::get('email');
 		$user->username = Input::get('username');
 		$user->password = Hash::make(Input::get('password'));
 		$user->save();
 
+		$profileInfo = ['user_id' => '$user->id', 'bio' => ''];
+		$user->profile()->save(new Profile($profileInfo));
+		$user->save();
+
+		
 
 		return Redirect::route('users.index');
 	}
@@ -73,7 +81,7 @@ class UsersController extends Controller {
 			//Session::flash('alert-class', 'alert-danger'); 
 		}
 		
-		return View::make('profiles.show');
+		return View::make('profiles.show')->withUser($user);
 	}
 
 }

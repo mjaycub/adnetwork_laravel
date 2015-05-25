@@ -17,8 +17,16 @@ Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/404', 'PagesController@error');
 
+#Profile Edit
+Route::resource('profile', 'ProfilesController', ['only' => ['edit', 'update']]);
+Route::get('/users/{profile}/edit', ['as' => 'profile.edit', 'uses' => 'ProfilesController@edit']);
+
 # Users
 Route::resource('users', 'UsersController');
+
+#Profile
+# Route::get('/users/{profile}', ['as' => 'profile.show', 'uses' => 'ProfilesController@show']);
+
 
 # Authentication
 Route::get('login', 'SessionsController@create');
@@ -27,7 +35,6 @@ Route::resource('sessions', 'SessionsController');
 
 # User-accessed page
 Route::get('admin', ['middleware' => 'auth', 'uses' => 'PagesController@admin']);
-
 
 #User Profiles
 /*
