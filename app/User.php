@@ -8,15 +8,16 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Validator;
+use \App\Role as Role;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
 	use Authenticatable, CanResetPassword;
 
 	public static $rules = [
-		'username' => 'required', 
-		'email' => 'required',
-		'password' => 'required'
+		'username' => 'required|unique:users', 
+		'email' => 'required|unique:users',
+		'password' => 'required|confirmed'
 		];
 
 	public static $errors;
@@ -57,6 +58,38 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	public function profile()
 	{
 		return $this->hasOne('App\Profile');
+	}
+
+	public function roles()
+	{
+		return $this->belongsToMany('App\Role');
+	}
+
+	public function removeRole($role)
+	{
+		return $this->roles()->detach($role);
+	}
+
+	public function assignRole($role)
+	{
+		return $this->roles()->attach($role);
+	}
+
+	# takes a string as parameter, eg: "owner", "administrator"
+	public function hasRole($name)
+	{
+		foreach($this->roles as $role)
+		{
+			if($role->name == $name)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		return false;
 	}
 
 }

@@ -2,4 +2,9 @@
 
 @section('content')
 	<h1>Hello {{$name}}!</h1>
+	@if(Session::has('message'))
+		<div>
+			<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+		</div>
+	@endif
 @stop

@@ -11,13 +11,13 @@
 		{!! Form::open(['route' => 'sessions.store']) !!}
 			<div class="form-group">
 				{!! Form::label('email', 'Email:') !!}
-				{!! Form::email('email', null, ['class' => 'form-control']) !!}
+				{!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required']) !!}
 				{!! $errors->first('email', '<span class=error>:message</span>') !!}
 			</div> 
 
 			<div class="form-group">
 				{!! Form::label('password', 'Password:') !!}
-				{!! Form::password('password', array('placeholder'=>'', 'class'=>'form-control' )) !!}
+				{!! Form::password('password', array('placeholder'=>'', 'class'=>'form-control', 'required' => 'required' )) !!}
 				{!! $errors->first('password') !!}
 			</div>
 

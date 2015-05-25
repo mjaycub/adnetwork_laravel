@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Session;
 use \App\User;
+use \App\Role as Role;
 use \App\Profile;
 use View;
 use Hash;
@@ -39,7 +40,7 @@ class UsersController extends Controller {
 
 	public function store()
 	{		
-
+	
 		if(! User::isValid(Input::all()))
 		{
 			Session::flash('message', 'There were problems with your inputs. Please correct and re-submit.'); 
@@ -61,6 +62,7 @@ class UsersController extends Controller {
 		
 
 		return Redirect::route('users.index');
+		
 	}
 
 	public function show($username)
