@@ -1,5 +1,5 @@
 <?php namespace App\Http\Controllers;
-
+use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Session;
@@ -21,6 +21,13 @@ class UsersController extends Controller {
 	
 	public function index()
 	{
+		if (!Auth::check())
+		{
+			Session::flash('message', 'You need to log-in to view the User page.'); 
+			Session::flash('alert-class', 'alert-danger'); 
+        	return redirect('/login');
+		}
+
 		$users = User::all();
 
 		return View::make('users/index')->withUsers($users);

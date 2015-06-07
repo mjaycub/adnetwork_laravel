@@ -1,6 +1,7 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
+use Session;
 use Illuminate\Contracts\Auth\Guard;
 
 class Authenticate {
@@ -40,6 +41,8 @@ class Authenticate {
 			}
 			else
 			{
+				Session::flash('message', 'You need to log-in to view this page.'); 
+				Session::flash('alert-class', 'alert-danger'); 
 				return redirect()->guest('login');
 			}
 		}
