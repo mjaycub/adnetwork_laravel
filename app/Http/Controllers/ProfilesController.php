@@ -57,6 +57,9 @@ class ProfilesController extends Controller {
 		$user = User::whereUsername($username)->firstOrFail();
 		$input = Input::only('bio', 'location', 'youtube_username', 'twitter_username', 'instagram_username', 'facebook_page_name', 'vine_username');
 
+		Session::flash('message', 'Your profile has been updated! '); 
+		Session::flash('alert-class', 'alert-info'); 
+
 		if (count($user->profile))
 		{   
 		    $user->profile->fill($input)->save();

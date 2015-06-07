@@ -1,0 +1,102 @@
+[
+    {
+        "id": "3",
+        "username": "markjacob",
+        "name": "Mark Jacob",
+        "email": "example@example.com",
+        "password": "$2y$10$xdvtH9BtMVLitU4fwGhFmeUsTyzaQq4XcxKci68DyYEXPsUdYJMqy",
+        "created_at": "2015-03-08 21:22:09",
+        "updated_at": "2015-03-08 21:22:09",
+        "remember_token": null
+    },
+    {
+        "id": "5",
+        "username": "mj",
+        "name": "John Smith",
+        "email": "me@example.com",
+        "password": "$2y$10$v.ubtaCViKxY7FwgQZo0COdSkaDqgHrdSk6pKDYdkUMvD5FHrGQAO",
+        "created_at": "2015-03-08 21:48:48",
+        "updated_at": "2015-03-08 22:08:43",
+        "remember_token": "JeHjgO3285p3h7vavGyXOC1R4pSBBHPSR23yikyrdIKIx7mNA6KryH446So4"
+    },
+    {
+        "id": "7",
+        "username": "test1",
+        "name": "Test Name",
+        "email": "test1@example.com",
+        "password": "$2y$10$n7vNII68dzKAqblu7mI4vu.yC6ToURwx4uHyfQFue4ayHI7NOwqjW",
+        "created_at": "2015-03-08 22:50:59",
+        "updated_at": "2015-05-25 16:08:51",
+        "remember_token": "fl8jQlK9UZZWQEAR1KibU9h4vI7IpqumBb2GyBguBwPfhHqhNG7eovjperxs"
+    },
+    {
+        "id": "8",
+        "username": "test2",
+        "name": "",
+        "email": "test2@example.com",
+        "password": "$2y$10$aK78UEX06NdIyU\/mgHozPuvqFx8quYamNyFTsjQDEEvjwNd1Jxmxq",
+        "created_at": "2015-05-25 16:09:00",
+        "updated_at": "2015-05-25 18:11:20",
+        "remember_token": "IZF9D6xXlpLNY23K2FlMzMPbaxmNV7h50stda0bJ1ewOOz8dtsNnGz5S9GO0"
+    },
+    {
+        "id": "9",
+        "username": "test3",
+        "name": "",
+        "email": "test3@example.com",
+        "password": "$2y$10$tt5E3Y6tiNyLaCVRjIwMf.ZOQwTQvWHqm2M6OFKpfaDWIxA7B7Rle",
+        "created_at": "2015-05-25 16:15:12",
+        "updated_at": "2015-05-25 22:31:04",
+        "remember_token": "0RR4VxZkzOcqtisa3JOfgjkGPFCBN9CDoeOJ8Yj5lPoviGYzNwxDhmU4N8LT"
+    },
+    {
+        "id": "10",
+        "username": "test4",
+        "name": "",
+        "email": "test4@example.com",
+        "password": "$2y$10$FSLKq2Mg6h.LCkbJXrcghO8BvovR2BDe8GpNzIzInYisKN4zjQQ7u",
+        "created_at": "2015-05-25 18:12:28",
+        "updated_at": "2015-05-25 18:12:28",
+        "remember_token": null
+    },
+    {
+        "id": "11",
+        "username": "test5",
+        "name": "",
+        "email": "test5@example.com",
+        "password": "$2y$10$nh9vlQPAhajYL3uxxTwNVeXxZitHbjY97MOIzGrPAhObMJKJqxRPy",
+        "created_at": "2015-05-25 18:21:45",
+        "updated_at": "2015-06-07 21:13:30",
+        "remember_token": "Jo2uS5LtDv7lBI4VlZdcoZ4d69GefALtXcdaIH25IkMS6NLkNkqlV25CByuJ"
+    },
+    {
+        "id": "12",
+        "username": "test6",
+        "name": "",
+        "email": "test6@example.com",
+        "password": "$2y$10$otA\/jvvWQNxfI2JKoqGbQ.b3FdtXYnZ40dKTIBWXACJCfWE5W5eJy",
+        "created_at": "2015-05-25 19:47:06",
+        "updated_at": "2015-05-25 22:28:02",
+        "remember_token": "jhXZjXuxqpdzCF8iY9QMePGGE7iSyI64YnrKzZjBxPLJs4ABVwz81P55tDtd"
+    },
+    {
+        "id": "13",
+        "username": "test6",
+        "name": "",
+        "email": "test7@example.com",
+        "password": "$2y$10$2PLX1kDTFv5kyQj1gkz0mOOvuN.xg5X\/2D\/esQjCBV3NBWMuooWqm",
+        "created_at": "2015-05-25 20:37:08",
+        "updated_at": "2015-05-25 20:37:08",
+        "remember_token": null
+    },
+    {
+        "id": "14",
+        "username": "test8",
+        "name": "",
+        "email": "test8@example.com",
+        "password": "$2y$10$xZ2U7IiRUC.bi3Xz2z8I3eC2SOmFKQ9NezXrSDi11gfZYUgcgQ9rO",
+        "created_at": "2015-05-25 20:40:21",
+        "updated_at": "2015-06-07 21:16:42",
+        "remember_token": "F3KDFm3QmkmTfQm8ZGv7E4vVq6fufZ4jt3YQNeKCei1lbZA4XNqpFT5GV8gr"
+    }
+]

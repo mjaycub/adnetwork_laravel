@@ -37,7 +37,14 @@ class SessionsController extends Controller{
 		{
 			if(Auth::attempt(Input::only('email', 'password')))
 			{
-				return Redirect::to('/admin');
+					if (Auth::user()->hasRole('advertiser'))
+					{
+						return Redirect::to('/addash');
+					}
+					else
+					{
+						return Redirect::to('/admin');
+					}
 			}
 			Session::flash('message', 'Incorrect username/password combination. Please try again.'); 
 			Session::flash('alert-class', 'alert-danger'); 

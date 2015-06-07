@@ -75,6 +75,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->roles()->attach($role);
 	}
 
+	public function listRoles()
+	{
+		$roles = '';
+		foreach($this->roles as $role)
+		{
+			$roles = $role->name . ', ' . $roles;
+		}
+		return $roles;
+	}
+
 	# takes a string as parameter, eg: "owner", "administrator"
 	public function hasRole($name)
 	{

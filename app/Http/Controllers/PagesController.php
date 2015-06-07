@@ -2,6 +2,7 @@
 use \App\User;
 use Auth;
 use Session;
+use DB;
 
 
 class PagesController extends Controller {
@@ -30,8 +31,19 @@ class PagesController extends Controller {
 		abort(404);
 	}
 
+	public function addash()
+	{
+		return view('addash');
+	}
+
 	public function admin()
 	{
-		return view('admin');
+		$allUsers = DB::table('users')->get();
+		/* $ownvar = User::whereHas('roles', function($q)
+		{
+        	$q->where('name', 'owner');
+    	}
+		)->get();*/
+		return view('admin')->with('fetchedUsers', $allUsers);
 	}
 }
