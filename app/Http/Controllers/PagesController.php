@@ -33,6 +33,13 @@ class PagesController extends Controller {
 
 	public function addash()
 	{
+		if (!Auth::user()->hasRole('advertiser'))
+		{
+			Session::flash('message', 'Your account does not have permission to view that page. If you believe this is a mistake please contact support immediately.'); 
+			Session::flash('alert-class', 'alert-danger'); 
+        	return redirect('/');
+		}
+		
 		return view('addash');
 	}
 

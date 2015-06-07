@@ -66,8 +66,8 @@
         "email": "test5@example.com",
         "password": "$2y$10$nh9vlQPAhajYL3uxxTwNVeXxZitHbjY97MOIzGrPAhObMJKJqxRPy",
         "created_at": "2015-05-25 18:21:45",
-        "updated_at": "2015-06-07 21:13:30",
-        "remember_token": "Jo2uS5LtDv7lBI4VlZdcoZ4d69GefALtXcdaIH25IkMS6NLkNkqlV25CByuJ"
+        "updated_at": "2015-06-07 22:38:58",
+        "remember_token": "Ss7mZth493Mw3VbJERXMu8T0EFDE2bP1TD1dapgQlfVPKTDeLcbFo9rmdvdk"
     },
     {
         "id": "12",
@@ -96,7 +96,7 @@
         "email": "test8@example.com",
         "password": "$2y$10$xZ2U7IiRUC.bi3Xz2z8I3eC2SOmFKQ9NezXrSDi11gfZYUgcgQ9rO",
         "created_at": "2015-05-25 20:40:21",
-        "updated_at": "2015-06-07 21:16:42",
-        "remember_token": "F3KDFm3QmkmTfQm8ZGv7E4vVq6fufZ4jt3YQNeKCei1lbZA4XNqpFT5GV8gr"
+        "updated_at": "2015-06-07 22:39:05",
+        "remember_token": "ksVRmVPKcZOHtVRgO1vz5EWbMKRnZgB7DKVvRJINIbgCjC0ucUqXNrRLcqgp"
     }
 ]

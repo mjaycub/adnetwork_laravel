@@ -94,10 +94,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 			{
 				return true;
 			}
-			else
-			{
-				return false;
-			}
 		}
 		return false;
 	}
