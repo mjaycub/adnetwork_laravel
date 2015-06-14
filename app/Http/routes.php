@@ -14,9 +14,12 @@ use \App\Http\Middleware;
 
 # Home
 Route::get('/', 'PagesController@home');
-Route::get('/about', ['middleware' => 'auth', 'uses' => 'PagesController@about']);
+Route::get('/about', 'PagesController@about');
+Route::get('/owner', ['middleware' => 'auth', 'uses' => 'PagesController@owner']);
 Route::get('/404', 'PagesController@error');
 Route::get('/addash', ['middleware' => 'auth', 'uses' => 'PagesController@addash']);
+Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
+
 
 #Profile Edit
 Route::resource('profile', 'ProfilesController', ['only' => ['edit', 'update']]);

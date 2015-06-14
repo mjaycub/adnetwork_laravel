@@ -14,7 +14,7 @@ class SessionsController extends Controller{
 	{
 		if(Auth::check())
 		{
-			return Redirect::to('/admin');
+			return Redirect::to('/about'); // temporary redirect
 		}
 		return View::make('sessions.create');
 	}
@@ -37,13 +37,21 @@ class SessionsController extends Controller{
 		{
 			if(Auth::attempt(Input::only('email', 'password')))
 			{
-					if (Auth::user()->hasRole('advertiser'))
+					if (Auth::user()->hasRole('owner'))
+					{
+						return Redirect::to('/owner');
+					}
+					else if (Auth::user()->hasRole('advertiser'))
 					{
 						return Redirect::to('/addash');
 					}
-					else
+					else if (Auth::user()->hasRole('administrator'))
 					{
 						return Redirect::to('/admin');
+					}
+					else
+					{
+						return Redirect::to('/dashboard');
 					}
 			}
 			Session::flash('message', 'Incorrect username/password combination. Please try again.'); 

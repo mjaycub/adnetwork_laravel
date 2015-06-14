@@ -1,1 +1,112 @@
-[{"id":"11","username":"test5","name":"","email":"test5@example.com","created_at":"2015-05-25 18:21:45","updated_at":"2015-06-07 21:13:30"}]
+[
+    {
+        "id": "3",
+        "username": "markjacob",
+        "name": "Mark Jacob",
+        "email": "example@example.com",
+        "password": "$2y$10$xdvtH9BtMVLitU4fwGhFmeUsTyzaQq4XcxKci68DyYEXPsUdYJMqy",
+        "created_at": "2015-03-08 21:22:09",
+        "updated_at": "2015-03-08 21:22:09",
+        "remember_token": null
+    },
+    {
+        "id": "5",
+        "username": "mj",
+        "name": "John Smith",
+        "email": "me@example.com",
+        "password": "$2y$10$v.ubtaCViKxY7FwgQZo0COdSkaDqgHrdSk6pKDYdkUMvD5FHrGQAO",
+        "created_at": "2015-03-08 21:48:48",
+        "updated_at": "2015-03-08 22:08:43",
+        "remember_token": "JeHjgO3285p3h7vavGyXOC1R4pSBBHPSR23yikyrdIKIx7mNA6KryH446So4"
+    },
+    {
+        "id": "7",
+        "username": "test1",
+        "name": "Test Name",
+        "email": "test1@example.com",
+        "password": "$2y$10$n7vNII68dzKAqblu7mI4vu.yC6ToURwx4uHyfQFue4ayHI7NOwqjW",
+        "created_at": "2015-03-08 22:50:59",
+        "updated_at": "2015-05-25 16:08:51",
+        "remember_token": "fl8jQlK9UZZWQEAR1KibU9h4vI7IpqumBb2GyBguBwPfhHqhNG7eovjperxs"
+    },
+    {
+        "id": "8",
+        "username": "test2",
+        "name": "",
+        "email": "test2@example.com",
+        "password": "$2y$10$aK78UEX06NdIyU\/mgHozPuvqFx8quYamNyFTsjQDEEvjwNd1Jxmxq",
+        "created_at": "2015-05-25 16:09:00",
+        "updated_at": "2015-05-25 18:11:20",
+        "remember_token": "IZF9D6xXlpLNY23K2FlMzMPbaxmNV7h50stda0bJ1ewOOz8dtsNnGz5S9GO0"
+    },
+    {
+        "id": "9",
+        "username": "test3",
+        "name": "",
+        "email": "test3@example.com",
+        "password": "$2y$10$tt5E3Y6tiNyLaCVRjIwMf.ZOQwTQvWHqm2M6OFKpfaDWIxA7B7Rle",
+        "created_at": "2015-05-25 16:15:12",
+        "updated_at": "2015-05-25 22:31:04",
+        "remember_token": "0RR4VxZkzOcqtisa3JOfgjkGPFCBN9CDoeOJ8Yj5lPoviGYzNwxDhmU4N8LT"
+    },
+    {
+        "id": "10",
+        "username": "test4",
+        "name": "",
+        "email": "test4@example.com",
+        "password": "$2y$10$FSLKq2Mg6h.LCkbJXrcghO8BvovR2BDe8GpNzIzInYisKN4zjQQ7u",
+        "created_at": "2015-05-25 18:12:28",
+        "updated_at": "2015-05-25 18:12:28",
+        "remember_token": null
+    },
+    {
+        "id": "11",
+        "username": "test5",
+        "name": "",
+        "email": "test5@example.com",
+        "password": "$2y$10$nh9vlQPAhajYL3uxxTwNVeXxZitHbjY97MOIzGrPAhObMJKJqxRPy",
+        "created_at": "2015-05-25 18:21:45",
+        "updated_at": "2015-06-14 17:52:36",
+        "remember_token": "efJKoe3Y9Jj9TEKdeRxy0dWrts9Zo1oFGnBPEDUFEUhwwRLcDRWOBc3NCD6L"
+    },
+    {
+        "id": "12",
+        "username": "test6",
+        "name": "",
+        "email": "test6@example.com",
+        "password": "$2y$10$otA\/jvvWQNxfI2JKoqGbQ.b3FdtXYnZ40dKTIBWXACJCfWE5W5eJy",
+        "created_at": "2015-05-25 19:47:06",
+        "updated_at": "2015-06-14 17:51:30",
+        "remember_token": "eXSqI6ImQVMIs1fbNAI36jlHqSQljfMXaehui9OdLabADUeXchbC2AKkqNOr"
+    },
+    {
+        "id": "14",
+        "username": "test8",
+        "name": "",
+        "email": "test8@example.com",
+        "password": "$2y$10$xZ2U7IiRUC.bi3Xz2z8I3eC2SOmFKQ9NezXrSDi11gfZYUgcgQ9rO",
+        "created_at": "2015-05-25 20:40:21",
+        "updated_at": "2015-06-07 22:39:05",
+        "remember_token": "ksVRmVPKcZOHtVRgO1vz5EWbMKRnZgB7DKVvRJINIbgCjC0ucUqXNrRLcqgp"
+    },
+    {
+        "id": "15",
+        "username": "test9",
+        "name": "",
+        "email": "test9@example.com",
+        "password": "$2y$10$c\/TooAwZy\/GGmPUfd6vgz.CzazxJs0NXXazjEYWrQLWKHAaejyTGq",
+        "created_at": "2015-06-09 20:02:23",
+        "updated_at": "2015-06-09 20:02:23",
+        "remember_token": null
+    },
+    {
+        "id": "16",
+        "username": "test10",
+        "name": "",
+        "email": "test10@example.com",
+        "password": "$2y$10$eFXEI8Df5LaNjkN6b2PZ7OGYw2OrNbiNvpIY1HgxCRUQfMXSp9OZ6",
+        "created_at": "2015-06-14 16:54:41",
+        "updated_at": "2015-06-14 17:55:41",
+        "remember_token": "HwQznVrpaX32VYchETCf6lx5vhRJlaEv0vBLd141sFHG737IOafqMa9iA5KJ"
+    }
+]

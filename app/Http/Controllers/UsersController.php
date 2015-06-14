@@ -64,6 +64,9 @@ class UsersController extends Controller {
 
 		$profileInfo = ['user_id' => '$user->id', 'bio' => ''];
 		$user->profile()->save(new Profile($profileInfo));
+
+		$user->assignRole(1); // assigned member role by default
+
 		$user->save();
 
 		
