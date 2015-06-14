@@ -14,6 +14,7 @@
 
 		<div class="form-group">
 			{!! Form::label('fname', ' First Name:') !!}
+			<p><i>Your first name is displayed on your profile to advertisers.</i></p>
 			{!! Form::text('fname', null, ['class' => 'form-control', 'required' => 'required']) !!}
 			{!! $errors->first('fname', '<span class=error>:message</span>') !!}
 		</div> 

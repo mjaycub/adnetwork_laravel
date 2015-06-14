@@ -19,6 +19,7 @@ Route::get('/owner', ['middleware' => 'auth', 'uses' => 'PagesController@owner']
 Route::get('/404', 'PagesController@error');
 Route::get('/addash', ['middleware' => 'auth', 'uses' => 'PagesController@addash']);
 Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
+Route::get('/advertisers', ['middleware' => 'auth', 'uses' => 'PagesController@advertisers']);
 
 
 #Profile Edit

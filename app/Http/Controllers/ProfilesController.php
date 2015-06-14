@@ -55,7 +55,20 @@ class ProfilesController extends Controller {
 	public function update($username)
 	{
 		$user = User::whereUsername($username)->firstOrFail();
-		$input = Input::only('name', 'bio', 'location', 'youtube_username', 'twitter_username', 'instagram_username', 'facebook_page_name', 'vine_username');
+
+		if (Input::has('fname'))
+		{
+			$fnameIn = Input::get('fname');
+		    $user->fname = $fnameIn;
+		}
+		if (Input::has('lname'))
+		{
+			$lnameIn = Input::get('lname');
+		    $user->lname = $lnameIn;
+		}
+
+		
+		$input = Input::only('bio', 'location', 'youtube_username', 'twitter_username', 'instagram_username', 'facebook_page_name', 'vine_username');
 
 		Session::flash('message', 'Your profile has been updated! '); 
 		Session::flash('alert-class', 'alert-info'); 

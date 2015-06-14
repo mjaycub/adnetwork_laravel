@@ -3,7 +3,7 @@ use \App\User;
 use Auth;
 use Session;
 use DB;
-
+use View;
 
 class PagesController extends Controller {
 	
@@ -22,6 +22,34 @@ class PagesController extends Controller {
 	public function dashboard()
 	{
 		return view('dashboard');
+	}
+
+	public function advertisers()
+	{
+		/* if (!Auth::check())
+		{
+			Session::flash('message', 'You need to log-in to view the User page.'); 
+			Session::flash('alert-class', 'alert-danger'); 
+        	return redirect('/login');
+		} */
+
+		//$advertisers = User::all();
+
+
+		$allUsers = DB::table('users')->get();
+		$allRoles = DB::table('role_user')->get();
+
+		$advertisers = User::whereHas('roles', function($q)
+		{
+        	$q->where('name', 'advertiser');
+    	}
+		)->get();
+
+		return view('advertisers')->with('advertisers', $advertisers);
+
+
+
+		//return View::make('advertisers')->withAdvertisers($advertisers);
 	}
 
 	public function owner()
