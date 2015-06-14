@@ -57,6 +57,8 @@ class UsersController extends Controller {
 		}
 
 		$user = new User;
+		$user->fname = Input::get('fname');
+		$user->lname = Input::get('lname');
 		$user->email = Input::get('email');
 		$user->username = Input::get('username');
 		$user->password = Hash::make(Input::get('password'));

@@ -11,6 +11,19 @@
 		@endif
 		
 		{!! Form::open(['route' => 'users.store']) !!}
+
+		<div class="form-group">
+			{!! Form::label('fname', ' First Name:') !!}
+			{!! Form::text('fname', null, ['class' => 'form-control', 'required' => 'required']) !!}
+			{!! $errors->first('fname', '<span class=error>:message</span>') !!}
+		</div> 
+
+		<div class="form-group">
+			{!! Form::label('lname', 'Last Name:') !!}
+			<p><i>Your last name is kept private.</i></p>
+			{!! Form::text('lname', null, ['class' => 'form-control', 'required' => 'required']) !!}
+			{!! $errors->first('lname', '<span class=error>:message</span>') !!}
+		</div> 
 		
 		<div class="form-group">
 			{!! Form::label('email', 'Email:') !!}
@@ -23,7 +36,7 @@
 		<div class="form-group">
 			{!! Form::label('username', 'Username:') !!}
 			<p>This will be used for your profile page. For example: the URL for username <i>'AnnesBakery'</i> would be <i>'bluence.com/users/AnnesBakery'</i> .</p>
-			<p>Your profile page is private, it will only be viewable by you and any advertisers on our platform. You can edit it at any time.</p>
+			<p>Your profile page is private, it will only be viewable by you and users with access to our platform.</p>
 			{!! Form::text('username', null, ['class' => 'form-control', 'required' => 'required']) !!}
 			{!! $errors->first('username', '<span class=error>:message</span>') !!}
 		</div>

@@ -9,6 +9,7 @@
 		@endif
 		
 		{!! Form::open(['route' => 'sessions.store']) !!}
+
 			<div class="form-group">
 				{!! Form::label('email', 'Email:') !!}
 				{!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required']) !!}

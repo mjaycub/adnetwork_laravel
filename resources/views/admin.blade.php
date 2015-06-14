@@ -27,7 +27,8 @@
             <tr>
                 <th data-field="id" data-sortable="true">User ID</th>
                 <th data-field="username" data-sortable="true" data-formatter="LinkFormatter">Username</th>
-                <th data-field="name" data-sortable="true">Name</th>
+                <th data-field="fname" data-sortable="true">First Name</th>
+                <th data-field="lname" data-sortable="true">Last Name</th>
                 <th data-field="email" data-sortable="true">Email Address</th>
             </tr>
         </thead>
@@ -50,7 +51,7 @@
     <thead>
         <tr>
             <th data-field="user_id" data-sortable="true">User ID</th>
-            <th data-field="role_id" data-sortable="true">Role</th>
+            <th data-field="role_id" data-sortable="true" data-formatter="RoleFormatter">Role</th>
         </tr>
     </thead>
 </table>
@@ -59,6 +60,27 @@
 </div>
 
 <script>
+function RoleFormatter(value, row, index) {
+    if(value==1) // member
+    {
+        return "Member";
+    }
+    else if(value==2) // admin
+    {
+        return "Admin";
+    }
+    else if(value==3) // owner
+    {
+        return "Owner";
+    }
+    else if(value==4) // advertiser
+    {
+        return "Advertiser";
+    }
+
+    return "Unknown - notify mark@bluence.com .";
+}
+
 function LinkFormatter(value, row, index) {
     var userURL = '/users/' + value;
   return "<a href='"+userURL+"'>"+value+"</a>";

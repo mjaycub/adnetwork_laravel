@@ -5,7 +5,7 @@
 		<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
 	@else
 		<h1>Profile</h1>
-		<h1>{{ $user->username }}</h1>
+		<h2>{{ $user->username }} <small>{{ $user->fname }}</small></h2>
 
 		@if (Auth::check())
 			@if( Auth::user()->id == $user->id)

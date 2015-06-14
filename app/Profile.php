@@ -12,7 +12,7 @@ use Validator;
 class Profile extends Model {
 
 	protected $fillable = [
-		'location', 'bio', 'youtube_username', 'twitter_username',
+		'name', 'location', 'bio', 'youtube_username', 'twitter_username',
 		'instagram_username', 'facebook_page_name', 'vine_username'
 	];
 

@@ -12,6 +12,11 @@
 
 		<!-- Bio Field -->
 		<div class="form-group">
+			{!! Form::label('name', 'Name:') !!}
+			{!! Form::text('name', null, ['class' => 'form-control']) !!}
+		</div>
+
+		<div class="form-group">
 			{!! Form::label('bio', 'Bio:') !!}
 			{!! Form::text('bio', null, ['class' => 'form-control']) !!}
 		</div>
