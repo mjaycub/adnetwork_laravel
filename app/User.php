@@ -18,6 +18,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		'fname' => 'alpha|required',
 		'lname' => 'alpha|required',
 		'username' => 'unique:users', 
+		'company' => 'unique:users',
 		'email' => 'required|unique:users',
 		'password' => 'required|confirmed'
 		];
@@ -35,7 +36,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['fname', 'lname', 'username', 'email', 'password'];
+	protected $fillable = ['fname', 'lname', 'company', 'username', 'email', 'password'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

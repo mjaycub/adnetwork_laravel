@@ -19,6 +19,12 @@
         file_put_contents($file2, $json_string2);
     ?>
 
+    <?php
+        $json_string3 = json_encode($advertisers, JSON_PRETTY_PRINT);
+        $file3 = 'data3.json';
+        file_put_contents($file3, $json_string3);
+    ?>
+
     <h3>Users</h3>
     <div>
 
@@ -34,7 +40,22 @@
         </thead>
     </table>
 
-    <p><b>Raw data:</b> <?php echo $json_string2; ?> </p>
+        <h3>Advertisers</h3>
+    <div>
+
+      <table data-toggle="table" data-url='data3.json' data-cache="false">
+        <thead>
+            <tr>
+                <th data-field="id" data-sortable="true">Advertiser ID</th>
+                <th data-field="company" data-sortable="true" data-formatter="AdLinkFormatter">Username (Replace w/ 'Company')</th>
+                <th data-field="fname" data-sortable="true">First Name</th>
+                <th data-field="lname" data-sortable="true">Last Name</th>
+                <th data-field="email" data-sortable="true">Email Address</th>
+            </tr>
+        </thead>
+    </table>
+
+   <!-- <p><b>Raw data:</b> <?php echo $json_string2; ?> </p> -->
 
 </div>
 
@@ -56,7 +77,7 @@
     </thead>
 </table>
 
-<p><b>Raw data:</b> <?php echo $json_string; ?> </p>
+<!-- <p><b>Raw data:</b> <?php echo $json_string; ?> </p> -->
 </div>
 
 <script>
@@ -79,6 +100,11 @@ function RoleFormatter(value, row, index) {
     }
 
     return "Unknown - notify mark@bluence.com .";
+}
+
+function AdLinkFormatter(value, row, index) {
+    var advertiserURL = '/advertisers/' + value;
+  return "<a href='"+advertiserURL+"'>"+value+"</a>";
 }
 
 function LinkFormatter(value, row, index) {

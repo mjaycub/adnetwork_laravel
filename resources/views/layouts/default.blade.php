@@ -47,7 +47,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="/login">Login</a></li>
-						<li><a href="/users/create">Register</a></li>
+						<li><a href="/register">Register</a></li>
 					@else
 					<li><a href="{{'/users/'.Auth::user()->username}}">Your Profile</a></li>
 						<li class="dropdown">

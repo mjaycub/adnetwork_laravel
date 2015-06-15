@@ -2,17 +2,19 @@
     {
         "id": "11",
         "username": "test5",
+        "company": null,
         "fname": "John",
         "lname": "Smith",
         "email": "test5@example.com",
         "password": "$2y$10$nh9vlQPAhajYL3uxxTwNVeXxZitHbjY97MOIzGrPAhObMJKJqxRPy",
         "created_at": "2015-05-25 18:21:45",
-        "updated_at": "2015-06-14 22:49:04",
-        "remember_token": "3nLlZDlTmlyVFmF4x1N9UX9gAnHqQY9eQHTgKRmD5Z1Qk6QmoUUUkBoRbQyc"
+        "updated_at": "2015-06-14 23:59:53",
+        "remember_token": "x0df5So4xG8MU0sVW7M6W9MX2oYCqECYvoEu6WyUeKJAqmw8PJHlenyLhxP5"
     },
     {
         "id": "12",
         "username": "test6",
+        "company": null,
         "fname": "",
         "lname": "",
         "email": "test6@example.com",
@@ -24,6 +26,7 @@
     {
         "id": "14",
         "username": "test8",
+        "company": null,
         "fname": "",
         "lname": "",
         "email": "test8@example.com",
@@ -35,6 +38,7 @@
     {
         "id": "15",
         "username": "test9",
+        "company": null,
         "fname": "",
         "lname": "",
         "email": "test9@example.com",
@@ -46,34 +50,37 @@
     {
         "id": "16",
         "username": "test10",
+        "company": null,
         "fname": "",
         "lname": "",
         "email": "test10@example.com",
         "password": "$2y$10$eFXEI8Df5LaNjkN6b2PZ7OGYw2OrNbiNvpIY1HgxCRUQfMXSp9OZ6",
         "created_at": "2015-06-14 16:54:41",
-        "updated_at": "2015-06-14 17:55:41",
-        "remember_token": "HwQznVrpaX32VYchETCf6lx5vhRJlaEv0vBLd141sFHG737IOafqMa9iA5KJ"
+        "updated_at": "2015-06-15 00:15:47",
+        "remember_token": "hn1XXcNIjDmRbuGOfssBA0lW3dgNVWQxs7nscIbIpYFm1gm35Y2gyOo7LcEr"
     },
     {
-        "id": "17",
+        "id": "21",
+        "username": null,
+        "company": "Coke",
+        "fname": "Jack",
+        "lname": "Milton",
+        "email": "jack@coke.com",
+        "password": "$2y$10$pl39xGkGVoE08a2aQqT3keWAujx7ag0rkIOmwisUYog0l0Q3uJH7K",
+        "created_at": "2015-06-15 00:03:54",
+        "updated_at": "2015-06-15 00:15:32",
+        "remember_token": "dgHPab3E7LtwGvbaM2KQbHDsFlkddV8i0mz7mtfnfBAPmv59wz0obpkEFCx3"
+    },
+    {
+        "id": "22",
         "username": "test11",
+        "company": null,
         "fname": "Mark",
         "lname": "Jacob",
         "email": "test11@example.com",
-        "password": "$2y$10$qTosAfp2x7OesziISx8P6undUf\/quRFPct8MTcat5QX3nz3zVl1hW",
-        "created_at": "2015-06-14 21:53:48",
-        "updated_at": "2015-06-14 21:54:55",
-        "remember_token": "1pgRcXpI1xgOfhthOKCoHBO82Q6wz4mZQdxAJUoamwsexw6CuFRN5ebsONul"
-    },
-    {
-        "id": "18",
-        "username": "test13",
-        "fname": "Jack",
-        "lname": "Smith",
-        "email": "test13@example.com",
-        "password": "$2y$10$q70oyTSEjC2rvYHZj7NnLuGj9hrQ8eNhq82UUbS6ftjK61g5F4j86",
-        "created_at": "2015-06-14 23:05:09",
-        "updated_at": "2015-06-14 23:05:22",
-        "remember_token": "grKngpDaYCm6jPi9o9zM2LX2HPysWAifQYvshw9ytBFOWHDSNodCw5QIAGwl"
+        "password": "$2y$10$Y2OX8qxYCQRAcn3cSc8oFeN2MbV\/Kdg7YyvQFsxR2gh\/vBoCCIEXy",
+        "created_at": "2015-06-15 00:16:21",
+        "updated_at": "2015-06-15 00:17:21",
+        "remember_token": "pXblGk19489JsUYhEnbKAYCYzMEDEnJ7S2s9jPlbRSSK7HkySKAlA3UpNU4x"
     }
 ]

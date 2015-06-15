@@ -24,6 +24,16 @@ class PagesController extends Controller {
 		return view('dashboard');
 	}
 
+	public function adCreate()
+	{
+		return view('adCreate');
+	}
+
+	public function register()
+	{
+		return view('register');
+	}
+
 	public function advertisers()
 	{
 		/* if (!Auth::check())
@@ -93,11 +103,11 @@ class PagesController extends Controller {
 		$allUsers = DB::table('users')->get();
 		$allRoles = DB::table('role_user')->get();
 
-		/* $ownvar = User::whereHas('roles', function($q)
+		$advertisers = User::whereHas('roles', function($q)
 		{
-        	$q->where('name', 'owner');
+        	$q->where('name', 'advertiser');
     	}
-		)->get();*/
-		return view('admin')->with('fetchedRoles', $allRoles)->with('fetchedUsers', $allUsers);
+		)->get();
+		return view('admin')->with('fetchedRoles', $allRoles)->with('fetchedUsers', $allUsers)->with('advertisers', $advertisers);
 	}
 }

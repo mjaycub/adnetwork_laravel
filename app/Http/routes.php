@@ -17,9 +17,15 @@ Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/owner', ['middleware' => 'auth', 'uses' => 'PagesController@owner']);
 Route::get('/404', 'PagesController@error');
+Route::get('/register', 'PagesController@register');
+
+# Dashboards
 Route::get('/addash', ['middleware' => 'auth', 'uses' => 'PagesController@addash']);
 Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
+
+#Advertisers
 Route::get('/advertisers', ['middleware' => 'auth', 'uses' => 'PagesController@advertisers']);
+Route::get('/advertisers/create', 'PagesController@adCreate');
 
 
 #Profile Edit

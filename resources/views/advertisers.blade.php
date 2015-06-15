@@ -4,7 +4,7 @@
 	<h1>All Advertisers</h1>
 	@if($advertisers->count())
 		@foreach ($advertisers as $advertiser)
-		<li> {!! link_to("/advertisers/{$advertiser->username}", $advertiser->username) !!} </li>
+		<li> {!! link_to("/advertisers/{$advertiser->company}", $advertiser->company) !!} </li>
 		@endforeach
 	@else
 		<p>Unfortunately, there are no users.</p>
