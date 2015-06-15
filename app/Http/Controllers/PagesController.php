@@ -4,6 +4,9 @@ use Auth;
 use Session;
 use DB;
 use View;
+use Illuminate\Database\Eloquent\ModelNotFoundException as ModelNotFoundException;
+use Log;
+use Redirect;
 
 class PagesController extends Controller {
 	
@@ -32,6 +35,30 @@ class PagesController extends Controller {
 	public function register()
 	{
 		return view('register');
+	}
+
+	public function adProfile($company)
+	{
+
+
+		//taken from ProfilesController, which is now retired
+		try
+		{
+			$user = User::whereCompany($company)->firstOrFail();
+		}
+		catch(ModelNotFoundException $e)
+		{
+
+			//return Redirect::to('/users/')->withErrors('No user registered under the name: ' . $username);
+			// Log 404 error with requested URL. URL is /{$username}
+			Log::warning('404 caught in UsersController.', ['context' => 'Requested username,URL: /users/' . $company]);	
+			//abort(404);
+			return Redirect::to('/404');
+			//Session::flash('message', 'No user registered under the name: ' . $username); 
+			//Session::flash('alert-class', 'alert-danger'); 
+		}
+		
+		return View::make('profiles.show')->withUser($user);
 	}
 
 	public function advertisers()

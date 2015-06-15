@@ -47,7 +47,7 @@
         <thead>
             <tr>
                 <th data-field="id" data-sortable="true">Advertiser ID</th>
-                <th data-field="company" data-sortable="true" data-formatter="AdLinkFormatter">Username (Replace w/ 'Company')</th>
+                <th data-field="company" data-sortable="true" data-formatter="AdLinkFormatter">Company</th>
                 <th data-field="fname" data-sortable="true">First Name</th>
                 <th data-field="lname" data-sortable="true">Last Name</th>
                 <th data-field="email" data-sortable="true">Email Address</th>

@@ -28,9 +28,13 @@ Route::get('/advertisers', ['middleware' => 'auth', 'uses' => 'PagesController@a
 Route::get('/advertisers/create', 'PagesController@adCreate');
 
 
-#Profile Edit
+# Creator Profile Edit
 Route::resource('profile', 'ProfilesController', ['only' => ['edit', 'update']]);
 Route::get('/users/{profile}/edit', ['as' => 'profile.edit', 'uses' => 'ProfilesController@edit']);
+
+# Advetiser Profile Edit
+Route::get('/advertisers/{profile}', 'PagesController@adProfile');
+Route::get('/advertisers/{profile}/edit', ['as' => 'profile.edit', 'uses' => 'ProfilesController@edit']);
 
 # Users
 Route::resource('users', 'UsersController');
