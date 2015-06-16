@@ -24,6 +24,23 @@ class PagesController extends Controller {
 
 	public function dashboard()
 	{
+		if (!Auth::user()->hasRole('creator'))
+		{
+			if(Auth::user()->hasRole('advertiser'))
+			{
+				# RE-DIRECTING - If advertisers go to /dashboard/ this could also be a logged error instead of re-direct.
+				# Advertiser users should NOT be following any links to /dashboard/ but instead /addash/ (or relevant URL)
+				Session::flash('message', 'You were redirected to the advertiser dashboard, which is located at bluence.com/addash. If this is a mistake please contact support.'); # URL MOST LIKELY CHANGING
+				Session::flash('alert-class', 'alert-warning'); 
+				return Redirect::to('/addash');
+			}
+
+			Session::flash('message', 'Your account does not have permission to view that page. If you believe this is a mistake please contact support immediately.'); 
+			Session::flash('alert-class', 'alert-danger'); 
+        	return redirect('/');
+		}
+	
+
 		return view('dashboard');
 	}
 
