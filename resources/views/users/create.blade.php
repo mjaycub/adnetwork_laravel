@@ -2,7 +2,7 @@
 @extends('layouts.default')
 
 @section('content')
-		<h1>Create New User</h1>
+		<h1>Create New Account - Creator</h1>
 
 		@if(Session::has('message'))
 			<div>

@@ -40,6 +40,11 @@ class UsersController extends Controller {
 		return View::make('users/show', ['user' => $user]);
 	} */
 
+	public function oldUsers()
+	{
+		return Redirect::to('/creators/'); # /users/ redirects to /creators/ 
+	}
+
 	public function create()
 	{
 		return View::make('users.create');

@@ -18,26 +18,32 @@ Route::get('/about', 'PagesController@about');
 Route::get('/owner', ['middleware' => 'auth', 'uses' => 'PagesController@owner']);
 Route::get('/404', 'PagesController@error');
 Route::get('/register', 'PagesController@register');
+Route::get('/users/', 'UsersController@oldUsers'); # redirect /users/ to /creators/
+Route::get('/users/{profile}/', 'UsersController@oldUsers'); # redirect /users/{profile} to /creators/{profile}
 
 # Dashboards
 Route::get('/addash', ['middleware' => 'auth', 'uses' => 'PagesController@addash']);
 Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
 
-#Advertisers
+# Advertisers
 Route::get('/advertisers', ['middleware' => 'auth', 'uses' => 'PagesController@advertisers']);
 Route::get('/advertisers/create', 'PagesController@adCreate');
 
+# Creators
+Route::get('/creators', ['middleware' => 'auth', 'uses' => 'UsersController@index']);
+Route::get('/creators/create', 'UsersController@create');
 
 # Creator Profile Edit
 Route::resource('profile', 'ProfilesController', ['only' => ['edit', 'update']]);
-Route::get('/users/{profile}/edit', ['as' => 'profile.edit', 'uses' => 'ProfilesController@edit']);
+Route::get('/creators/{profile}/', ['as' => 'users.show', 'uses' => 'UsersController@show']);
+Route::get('/creators/{profile}/edit', ['as' => 'profile.edit', 'uses' => 'ProfilesController@edit']);
 
 # Advetiser Profile Edit
 Route::get('/advertisers/{profile}', 'PagesController@adProfile');
 Route::get('/advertisers/{profile}/edit', ['as' => 'profile.edit', 'uses' => 'ProfilesController@edit']);
 
 # Users
-Route::resource('users', 'UsersController');
+Route::resource('users', 'UsersController', ['only' => ['store']]);
 
 #Profile
 # Route::get('/users/{profile}', ['as' => 'profile.show', 'uses' => 'ProfilesController@show']);

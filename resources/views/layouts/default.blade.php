@@ -40,7 +40,7 @@
 					<li><a href="/">Home</a></li>
 					<li><a href="/about">About</a></li>
 					<li><a href="/admin">Admin</a></li>
-					<li><a href="/users">Users</a></li>
+					<li><a href="/creators">Creators</a></li>
 					<li><a href="/advertisers">Advertisers</a></li>
 					<li><a href="/dashboard">Dashboard</a></li>
 					<li><a href="/addash">Ad Dash</a></li>
