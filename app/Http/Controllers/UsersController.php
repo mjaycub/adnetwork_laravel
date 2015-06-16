@@ -12,6 +12,7 @@ use Input;
 use Redirect;
 use Validator;
 use Log;
+use DB;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -28,9 +29,21 @@ class UsersController extends Controller {
         	return redirect('/login');
 		}
 
-		$users = User::all();
+		#$users = User::all();
 
-		return View::make('users/index')->withUsers($users);
+		#return View::make('users/index')->withUsers($users);
+
+		$allUsers = DB::table('users')->get();
+		$allRoles = DB::table('role_user')->get();
+
+		$creators = User::whereHas('roles', function($q)
+		{
+        	$q->where('name', 'creator');
+    	}
+		)->get();
+
+		return view('users.index')->with('users', $creators);
+
 	}
 
 	/*public function show($username)

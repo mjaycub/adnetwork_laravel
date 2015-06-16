@@ -4,6 +4,13 @@
 	@if(Session::has('message'))
 		<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
 	@else
+
+	@if ($user->username == NULL )
+		<h3>ADVERTISER PROFILE DETECTED</h3>
+	@else
+		<h3>CREATOR PROFILE DETECTED</h3>
+	@endif
+
 		<h1>Profile</h1>
 		<h2>{{ $user->username }} <small>{{ $user->fname }}</small></h2>
 
