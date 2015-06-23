@@ -21,6 +21,12 @@ Route::get('/register', 'PagesController@register');
 Route::get('/users/', 'UsersController@oldUsers'); # redirect /users/ to /creators/
 Route::get('/users/{profile}/', 'UsersController@oldUsers'); # redirect /users/{profile} to /creators/{profile}
 
+# Confirm USER REG
+Route::get('register/verify/{confirmationCode}', [
+    'as' => 'confirmation_path',
+    'uses' => 'UsersController@confirm'
+]);
+
 # Dashboards
 Route::get('/addash', ['middleware' => 'auth', 'uses' => 'PagesController@addash']);
 Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);

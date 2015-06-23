@@ -78,6 +78,7 @@ class UsersController extends Controller {
 		$confirmation_code = str_random(30);
 
 		$user = new User;
+		$user->confirmation_code = $confirmation_code;
 		$user->fname = Input::get('fname');
 		$user->lname = Input::get('lname');
 		$user->email = Input::get('email');
@@ -113,11 +114,14 @@ class UsersController extends Controller {
 
 		
 		Mail::send('email.verify', ['confirmation_code' => $confirmation_code], function($message) {
-           	$message->from( 'info@bluence.com', 'Bluence' );
+           	$message->from( 'info@bluence.com', 'Bluence Registration' );
             $message->to('themarkjacob@gmail.com')->subject('Verify your email address for Bluence!');
         });
 
-		return Redirect::route('creators.index');
+        Session::flash('message', 'Thanks for signing up! Please check your email for your confirmation link.'); 
+		Session::flash('alert-class', 'alert-warning'); 
+
+		return Redirect::to('/login');
 		
 	}
 
@@ -141,5 +145,30 @@ class UsersController extends Controller {
 		
 		return View::make('profiles.show')->withUser($user);
 	}
+
+	public function confirm($confirmation_code)
+    {
+        if( ! $confirmation_code)
+        {
+            throw new InvalidConfirmationCodeException;
+        }
+
+        $user = User::whereConfirmationCode($confirmation_code)->first();
+
+        if ( ! $user)
+        {
+            throw new InvalidConfirmationCodeException;
+        }
+
+        $user->confirmed = 1;
+        $user->confirmation_code = null;
+        $user->save();
+
+        Session::flash('message', 'You have successfully verified your account.'); 
+		Session::flash('alert-class', 'alert-info'); 
+
+        return Redirect::to('/login');
+    }
+
 
 }

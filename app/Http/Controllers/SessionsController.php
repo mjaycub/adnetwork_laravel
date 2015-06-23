@@ -35,7 +35,12 @@ class SessionsController extends Controller{
 		}
 		else
 		{
-			if(Auth::attempt(Input::only('email', 'password')))
+			$credentials = [
+            'email' => Input::get('email'),
+            'password' => Input::get('password'), 
+            'confirmed' => 1
+        	];
+			if(Auth::attempt($credentials))
 			{
 					if (Auth::user()->hasRole('owner'))
 					{
