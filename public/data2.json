@@ -8,8 +8,10 @@
         "email": "test5@example.com",
         "password": "$2y$10$nh9vlQPAhajYL3uxxTwNVeXxZitHbjY97MOIzGrPAhObMJKJqxRPy",
         "created_at": "2015-05-25 18:21:45",
-        "updated_at": "2015-06-16 20:29:01",
-        "remember_token": "svIn8nFOz8a7j31v5oUbkMoUuxAeuyrOwEW9y6Lj61O1C9VbNYuRbynvjLBz"
+        "updated_at": "2015-06-17 21:15:17",
+        "remember_token": "FiLh6kFhSzrRh9PZSvRiZz04SKrpocDycEMYbsFO0FQcBYHERe8anSsSsQbx",
+        "confirmed": "1",
+        "confirmation_code": null
     },
     {
         "id": "12",
@@ -21,7 +23,9 @@
         "password": "$2y$10$otA\/jvvWQNxfI2JKoqGbQ.b3FdtXYnZ40dKTIBWXACJCfWE5W5eJy",
         "created_at": "2015-05-25 19:47:06",
         "updated_at": "2015-06-14 17:51:30",
-        "remember_token": "eXSqI6ImQVMIs1fbNAI36jlHqSQljfMXaehui9OdLabADUeXchbC2AKkqNOr"
+        "remember_token": "eXSqI6ImQVMIs1fbNAI36jlHqSQljfMXaehui9OdLabADUeXchbC2AKkqNOr",
+        "confirmed": "1",
+        "confirmation_code": null
     },
     {
         "id": "14",
@@ -33,7 +37,9 @@
         "password": "$2y$10$xZ2U7IiRUC.bi3Xz2z8I3eC2SOmFKQ9NezXrSDi11gfZYUgcgQ9rO",
         "created_at": "2015-05-25 20:40:21",
         "updated_at": "2015-06-07 22:39:05",
-        "remember_token": "ksVRmVPKcZOHtVRgO1vz5EWbMKRnZgB7DKVvRJINIbgCjC0ucUqXNrRLcqgp"
+        "remember_token": "ksVRmVPKcZOHtVRgO1vz5EWbMKRnZgB7DKVvRJINIbgCjC0ucUqXNrRLcqgp",
+        "confirmed": "1",
+        "confirmation_code": null
     },
     {
         "id": "15",
@@ -44,8 +50,10 @@
         "email": "test9@example.com",
         "password": "$2y$10$c\/TooAwZy\/GGmPUfd6vgz.CzazxJs0NXXazjEYWrQLWKHAaejyTGq",
         "created_at": "2015-06-09 20:02:23",
-        "updated_at": "2015-06-09 20:02:23",
-        "remember_token": null
+        "updated_at": "2015-06-17 19:18:15",
+        "remember_token": "X2znyPCtZbvMDyK5FjaO5mkSXQQsogXgdR8iXUyVZjltQ8eUgu7yWjkkvuIG",
+        "confirmed": "1",
+        "confirmation_code": null
     },
     {
         "id": "16",
@@ -57,7 +65,9 @@
         "password": "$2y$10$eFXEI8Df5LaNjkN6b2PZ7OGYw2OrNbiNvpIY1HgxCRUQfMXSp9OZ6",
         "created_at": "2015-06-14 16:54:41",
         "updated_at": "2015-06-15 00:15:47",
-        "remember_token": "hn1XXcNIjDmRbuGOfssBA0lW3dgNVWQxs7nscIbIpYFm1gm35Y2gyOo7LcEr"
+        "remember_token": "hn1XXcNIjDmRbuGOfssBA0lW3dgNVWQxs7nscIbIpYFm1gm35Y2gyOo7LcEr",
+        "confirmed": "1",
+        "confirmation_code": null
     },
     {
         "id": "21",
@@ -68,8 +78,10 @@
         "email": "jack@coke.com",
         "password": "$2y$10$pl39xGkGVoE08a2aQqT3keWAujx7ag0rkIOmwisUYog0l0Q3uJH7K",
         "created_at": "2015-06-15 00:03:54",
-        "updated_at": "2015-06-15 00:15:32",
-        "remember_token": "dgHPab3E7LtwGvbaM2KQbHDsFlkddV8i0mz7mtfnfBAPmv59wz0obpkEFCx3"
+        "updated_at": "2015-06-17 19:19:30",
+        "remember_token": "0tk1gKcfvi0tyq8nnDWTMRqfepve8zs7T46lqTOYdClYwPJZKqSMUTpp0MW5",
+        "confirmed": "1",
+        "confirmation_code": null
     },
     {
         "id": "22",
@@ -80,7 +92,9 @@
         "email": "test11@example.com",
         "password": "$2y$10$Y2OX8qxYCQRAcn3cSc8oFeN2MbV\/Kdg7YyvQFsxR2gh\/vBoCCIEXy",
         "created_at": "2015-06-15 00:16:21",
-        "updated_at": "2015-06-15 00:17:21",
-        "remember_token": "pXblGk19489JsUYhEnbKAYCYzMEDEnJ7S2s9jPlbRSSK7HkySKAlA3UpNU4x"
+        "updated_at": "2015-06-17 21:15:24",
+        "remember_token": "7LCd2SJyiG1eNy4v1KJhYhrUFNYZaidApQNbR1iInlXkAeqLdXDCWKN4GwAg",
+        "confirmed": "1",
+        "confirmation_code": null
     }
 ]
