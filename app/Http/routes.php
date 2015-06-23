@@ -30,7 +30,7 @@ Route::get('/advertisers', ['middleware' => 'auth', 'uses' => 'PagesController@a
 Route::get('/advertisers/create', 'PagesController@adCreate');
 
 # Creators
-Route::get('/creators', ['middleware' => 'auth', 'uses' => 'UsersController@index']);
+Route::get('/creators', ['as' => 'creators.index', 'middleware' => 'auth', 'uses' => 'UsersController@index']);
 Route::get('/creators/create', 'UsersController@create');
 
 # Creator Profile Edit

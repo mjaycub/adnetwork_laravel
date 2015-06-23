@@ -13,6 +13,7 @@ use Redirect;
 use Validator;
 use Log;
 use DB;
+use Mail;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -74,6 +75,8 @@ class UsersController extends Controller {
 			#return Redirect::back()->withInput();
 		}
 
+		$confirmation_code = str_random(30);
+
 		$user = new User;
 		$user->fname = Input::get('fname');
 		$user->lname = Input::get('lname');
@@ -109,8 +112,12 @@ class UsersController extends Controller {
 		$user->save();
 
 		
+		Mail::send('email.verify', ['confirmation_code' => $confirmation_code], function($message) {
+           	$message->from( 'info@bluence.com', 'Bluence' );
+            $message->to('themarkjacob@gmail.com')->subject('Verify your email address for Bluence!');
+        });
 
-		return Redirect::route('users.index');
+		return Redirect::route('creators.index');
 		
 	}
 
