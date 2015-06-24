@@ -50,14 +50,24 @@
 					@if (Auth::guest())
 						<li><a href="/login">Login</a></li>
 						<li><a href="/register">Register</a></li>
-					@else
-					<li><a href="{{'/users/'.Auth::user()->username}}">Your Profile</a></li>
+					@elseif(Auth::user()->username) <!-- Creator Menu -->
+					<li><a href="{{'/creators/'.Auth::user()->username}}">Your Profile</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="/logout">Logout</a></li>
 							</ul>
 						</li>
+					@elseif(Auth::user()->company) <!-- Advertiser Menu -->
+					<li><a href="{{'/advertisers/'.Auth::user()->company}}">Your Profile</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->company }} <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
+					@else
+					<li><a href="#">ERROR</a></li>
 					@endif
 				</ul>
 			</div>
