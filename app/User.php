@@ -9,9 +9,10 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Validator;
 use \App\Role as Role;
+use Cmgmyr\Messenger\Traits\Messagable;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
-
+	use Messagable;
 	use Authenticatable, CanResetPassword;
 
 	public static $rules = [
