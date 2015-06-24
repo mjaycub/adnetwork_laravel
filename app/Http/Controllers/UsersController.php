@@ -17,6 +17,8 @@ use Mail;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use InvalidConfirmationCodeException;
+use Exception;
 
 class UsersController extends Controller {
 
@@ -113,7 +115,7 @@ class UsersController extends Controller {
 		$user->save();
 
 		
-		Mail::send('email.verify', ['confirmation_code' => $confirmation_code], function($message) {
+		Mail::send('email.verify', ['user' => $user], function($message) {
            	$message->from( 'info@bluence.com', 'Bluence Registration' );
             $message->to('themarkjacob@gmail.com')->subject('Verify your email address for Bluence!');
         });
@@ -148,17 +150,25 @@ class UsersController extends Controller {
 
 	public function confirm($confirmation_code)
     {
+    	
         if( ! $confirmation_code)
         {
-            throw new InvalidConfirmationCodeException;
+            Session::flash('message', 'This confirmation code does not exist.'); 
+			Session::flash('alert-class', 'alert-warning'); 
+			return Redirect::to('login');
         }
 
         $user = User::whereConfirmationCode($confirmation_code)->first();
 
         if ( ! $user)
         {
-            throw new InvalidConfirmationCodeException;
+            Session::flash('message', 'This confirmation code does not exist.'); 
+			Session::flash('alert-class', 'alert-warning'); 
+			return Redirect::to('login');
         }
+
+        
+	    
 
         $user->confirmed = 1;
         $user->confirmation_code = null;
