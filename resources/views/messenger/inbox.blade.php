@@ -2,6 +2,8 @@
 
 @section('content')
 	<h1>Inbox</h1>
+
+	<h4>temp descrip</h4>
 	<p>
 	Inbox for users.
 	<ul>
@@ -11,6 +13,8 @@
 		<li>Option to send new message? How would a user select a recipient in this case?</li>
 	</ul>
 	</p>
+
+	<h4>end temp descrip</h4>
 	
 	<hr>
 	
@@ -23,12 +27,20 @@
     @if($threads->count() > 0)
         @foreach($threads as $thread)
 
+        	<?php $class = $thread->isUnread($currentUserId) ? 'alert-info' : ''; ?>
+	        <div class="media alert {!!$class!!}">
+	            <h4 class="media-heading">{!! link_to('messages/' . $thread->id, $thread->subject) !!}</h4>
+	            <p>{!! $thread->getLatestMessageAttribute->first()->body !!}</p>
+	            <p><small><strong>Creator:</strong> {!! $thread->creator()->fname !!} of
+	            @if ($thread->creator()->username == NULL )
+					<i>{!! $thread->creator()->company !!}</i> </small></p>
+				@else
+					<i>{!! $thread->creator()->username !!}</i> </small></p>
+				@endif
+
+	        </div>
 
 	       
-	        <div>
-	            <h4>{!! link_to('messages/' . $thread->id, $thread->subject) !!}</h4>
-	            
-	        </div>
 
 	        <hr>
 
