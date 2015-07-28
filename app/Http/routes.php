@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'messages'], function () {
     Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
 });
 
+Route::get('/inbox', ['middleware' => 'auth', 'uses' => 'MessagesController@inbox']);
 
 # Dashboards
 Route::get('/addash', ['middleware' => 'auth', 'uses' => 'PagesController@addash']);
