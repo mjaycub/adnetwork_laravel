@@ -20,22 +20,57 @@
 				@endif
 			@endif
 
-			<!-- Modal 
-  			<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal2" data-backdrop="false">Modal without Overlay (false)</button>
 
-			  
-			  <div class="modal fade" id="myModal2" role="dialog">
+			@if ($user->username == NULL )
+				<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal2" data-backdrop="false">Propose an Offer</button>
+			@else
+				<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal1" data-backdrop="false">Make an Offer</button>
+			@endif
+
+			<!-- Modal --> 
+			  <div class="modal fade" id="myModal1" role="dialog">
 			    <div class="modal-dialog">
 			    
-			      
 			      <div class="modal-content">
 			        <div class="modal-header">
 			          <button type="button" class="close" data-dismiss="modal">×</button>
-			          <h4 class="modal-title">Modal without Overlay</h4>
+			          <h4 class="modal-title">Offer Message</h4>
 			        </div>
 			        <div class="modal-body">
-			          <p>This modal has no overlay.</p>
-			          <p><strong>Note:</strong> You cannot click outside of this modal to close it.</p>
+			         
+			        	<!-- start message form -->
+						{!! Form::open(['route' => 'messages.store']) !!}
+						<div class="col-md-6">
+						    <!-- Subject Form Input -->
+						    <div class="form-group">
+						        {!! Form::label('subject', 'Subject', ['class' => 'control-label']) !!}
+						        {!! Form::text('subject', null, ['class' => 'form-control']) !!}
+						    </div>
+
+						    <!-- Message Form Input -->
+						    <div class="form-group">
+						        {!! Form::label('message', 'Message', ['class' => 'control-label']) !!}
+						        {!! Form::textarea('message', null, ['class' => 'form-control']) !!}
+						    </div>
+						    
+						    
+						    <h4>Sending to:</h4>
+						    <div class="radio">
+							  <label>
+							    <input type="radio" name="recipients[]" id="optionsRadios1" value="{!!$user->id!!}" checked>
+							    {!!$user->fname!!}
+							  </label>
+							</div>			 
+						    
+						    <!-- Submit Form Input -->
+						    <div class="form-group">
+						        {!! Form::submit('Submit', ['class' => 'btn btn-primary form-control']) !!}
+						    </div>
+						</div>
+						{!! Form::close() !!}
+
+						<!-- end message form -->
+
 			        </div>
 			        <div class="modal-footer">
 			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -43,7 +78,63 @@
 			      </div>
 			      
 			    </div>
-			  </div> -->
+			  </div>
+			 <!-- end Modal -->
+
+			 <!-- Modal --> 
+			  <div class="modal fade" id="myModal2" role="dialog">
+			    <div class="modal-dialog">
+			    
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal">×</button>
+			          <h4 class="modal-title">Proposal Message</h4>
+			        </div>
+			        <div class="modal-body">
+			         
+			        	<!-- start message form -->
+						{!! Form::open(['route' => 'messages.store']) !!}
+						<div class="col-md-6">
+						    <!-- Subject Form Input -->
+						    <div class="form-group">
+						        {!! Form::label('subject', 'Subject', ['class' => 'control-label']) !!}
+						        {!! Form::text('subject', null, ['class' => 'form-control']) !!}
+						    </div>
+
+						    <!-- Message Form Input -->
+						    <div class="form-group">
+						        {!! Form::label('message', 'Message', ['class' => 'control-label']) !!}
+						        {!! Form::textarea('message', null, ['class' => 'form-control']) !!}
+						    </div>
+						    
+						    
+						    <h4>Sending to:</h4>
+						    <div class="radio">
+							  <label>
+							    <input type="radio" name="recipients[]" id="optionsRadios1" value="{!!$user->id!!}" checked>
+							    {!!$user->fname!!}
+							  </label>
+							</div>			 
+						    
+						    <!-- Submit Form Input -->
+						    <div class="form-group">
+						        {!! Form::submit('Submit', ['class' => 'btn btn-primary form-control']) !!}
+						    </div>
+						</div>
+						{!! Form::close() !!}
+
+						<!-- end message form -->
+
+			        </div>
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        </div>
+			      </div>
+			      
+			    </div>
+			  </div>
+			 <!-- end Modal -->
+
 			  
 
 			<div class="bio">
