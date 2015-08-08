@@ -15,7 +15,13 @@
 	</p>
 
 	<h4>end temp descrip</h4>
-	
+
+	@if(Session::has('message'))
+			<div>
+				<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+			</div>
+	@endif
+
 	<hr>
 	
     @if (Session::has('error_message'))

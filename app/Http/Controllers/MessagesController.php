@@ -73,9 +73,20 @@ class MessagesController extends Controller
         // $users = User::whereNotIn('id', $thread->participantsUserIds())->get();
         // don't show the current user in list
         $userId = Auth::user()->id;
-        $users = User::whereNotIn('id', $thread->participantsUserIds($userId))->get();
-        $thread->markAsRead($userId);
-        return view('messenger.show', compact('thread', 'users'));
+
+        if($thread->hasParticipant($userId))
+        {
+             $thread->markAsRead($userId);
+             return view('messenger.show', compact('thread', 'userId'));
+        }
+        else
+        {
+            Session::flash('message', 'You do not appear to be a participant in that conversation. Please contact support immediately if you believe this to be incorrect.'); 
+            Session::flash('alert-class', 'alert-danger'); 
+            return redirect('/inbox');
+        }
+        //$users = User::whereNotIn('id', $thread->participantsUserIds($userId))->get();
+       
     }
     /**
      * Creates a new message thread
