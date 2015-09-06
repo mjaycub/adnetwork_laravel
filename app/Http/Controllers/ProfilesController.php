@@ -11,6 +11,7 @@ use Input;
 use Redirect;
 use Validator;
 use Log;
+use Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -49,7 +50,19 @@ class ProfilesController extends Controller {
 	public function edit($username)
 	{
 		$user = User::whereUsername($username)->firstOrFail();
-		return View::make('profiles.edit')->withUser($user);
+
+		if(Auth::user()->id == $user->id)
+		{
+			return View::make('profiles.edit')->withUser($user);
+		}
+		else
+		{
+			Session::flash('message', 'You may only edit your own profile silly.'); 
+			Session::flash('alert-class', 'alert-warning'); 
+
+		return Redirect::back();
+		}
+
 	}
 
 	public function update($username)

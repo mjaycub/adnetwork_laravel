@@ -37,50 +37,9 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/">Home</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/admin">Admin</a></li>
-					<li><a href="/creators">Creators</a></li>
-					<li><a href="/advertisers">Advertisers</a></li>
-					<li><a href="/dashboard">Dashboard</a></li>
-					<li><a href="/addash">Ad Dash</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="/login">Login</a></li>
-						<li><a href="/register">Register</a></li>
-					@elseif(Auth::user()->username) <!-- Creator Menu -->
-					<li>
-						<button type="button" class="btn btn-default" aria-label="inbox" onclick="location.href='/inbox/'">
-					 		<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
-						</button>
-
-					</li>
-					<li><a href="{{'/creators/'.Auth::user()->username}}">Your Profile</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="/logout">Logout</a></li>
-							</ul>
-						</li>
-					@elseif(Auth::user()->company) <!-- Advertiser Menu -->
-					<li>
-						<button type="button" class="btn btn-default" aria-label="inbox" onclick="location.href='/inbox/'">
-					 		<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
-						</button>
-
-					</li>
-					<li><a href="{{'/advertisers/'.Auth::user()->company}}">Your Profile</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->company }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="/logout">Logout</a></li>
-							</ul>
-						</li>
-					@else
-					<li><a href="#">ERROR</a></li>
-					@endif
 				</ul>
 			</div>
 		</div>

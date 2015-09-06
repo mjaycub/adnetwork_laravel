@@ -8,8 +8,8 @@
         "email": "test5@example.com",
         "password": "$2y$10$nh9vlQPAhajYL3uxxTwNVeXxZitHbjY97MOIzGrPAhObMJKJqxRPy",
         "created_at": "2015-05-25 18:21:45",
-        "updated_at": "2015-08-08 21:07:13",
-        "remember_token": "eVRz6Dg5JBxYdanqsNnZFcMl72WWrtlCbJ7h08wRFzg2qMnCcIOCl03YWvXd",
+        "updated_at": "2015-09-06 21:07:55",
+        "remember_token": "lwJJATrDcS7u7wuxpJTYGJiWWEkHuEB8AMPJ5irIkoiUMJVMjZMEy6CHUBaJ",
         "confirmed": "1",
         "confirmation_code": null
     },
@@ -22,8 +22,8 @@
         "email": "test6@example.com",
         "password": "$2y$10$otA\/jvvWQNxfI2JKoqGbQ.b3FdtXYnZ40dKTIBWXACJCfWE5W5eJy",
         "created_at": "2015-05-25 19:47:06",
-        "updated_at": "2015-06-14 17:51:30",
-        "remember_token": "eXSqI6ImQVMIs1fbNAI36jlHqSQljfMXaehui9OdLabADUeXchbC2AKkqNOr",
+        "updated_at": "2015-09-06 21:04:26",
+        "remember_token": "xK6FVZKcYRkpra1IWPAIn735ySU7kE0t2ovvlpwa2wIbzIPRmTNna0kPoQbo",
         "confirmed": "1",
         "confirmation_code": null
     },
@@ -134,8 +134,8 @@
         "email": "jackymoon@example.com",
         "password": "$2y$10$rDTs.mXC3B53emIqZCkRsOxS7GbBQ.Ozqm\/zCmnS902hHw\/uexd4a",
         "created_at": "2015-06-24 19:31:47",
-        "updated_at": "2015-06-24 21:38:16",
-        "remember_token": "DtWJhH0usImiTfp9ua3yVDv18LrqpXrLDMXpEnFHPkuzEPTdZ8QgKdF2hkqe",
+        "updated_at": "2015-08-25 14:14:54",
+        "remember_token": "QSErp7LhWn1UImZGZ5fnolxvd2DR87TuujtHCVzcl1pJK81Ep1LVfBDUu79F",
         "confirmed": "1",
         "confirmation_code": null
     }

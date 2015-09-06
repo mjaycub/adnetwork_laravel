@@ -14,6 +14,7 @@ use \App\Http\Middleware;
 
 # Home
 Route::get('/', 'PagesController@home');
+Route::get('/home', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/owner', ['middleware' => 'auth', 'uses' => 'PagesController@owner']);
 Route::get('/404', 'PagesController@error');
@@ -26,6 +27,15 @@ Route::get('register/verify/{confirmationCode}', [
     'as' => 'confirmation_path',
     'uses' => 'UsersController@confirm'
 ]);
+
+# PASSWORD RESET
+# Password reset link request routes...
+Route::get('/password/email', 'Auth\PasswordController@getEmail');
+Route::post('/password/email', 'Auth\PasswordController@postEmail');
+
+# Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 # MESSAGES
 Route::group(['middleware' => 'auth', 'prefix' => 'messages'], function () {
@@ -52,12 +62,12 @@ Route::get('/creators/create', 'UsersController@create');
 
 # Creator Profile Edit
 Route::resource('profile', 'ProfilesController', ['only' => ['edit', 'update']]);
-Route::get('/creators/{profile}/', ['as' => 'users.show', 'uses' => 'UsersController@show']);
-Route::get('/creators/{profile}/edit', ['as' => 'profile.edit', 'uses' => 'ProfilesController@edit']);
+Route::get('/creators/{profile}/', ['as' => 'users.show', 'middleware' => 'auth', 'uses' => 'UsersController@show']);
+Route::get('/creators/{profile}/edit', ['as' => 'profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@edit']);
 
 # Advetiser Profile Edit
-Route::get('/advertisers/{profile}', 'PagesController@adProfile');
-Route::get('/advertisers/{profile}/edit', ['as' => 'profile.edit', 'uses' => 'ProfilesController@edit']);
+Route::get('/advertisers/{profile}', ['middleware' => 'auth', 'uses' => 'PagesController@adProfile']);
+Route::get('/advertisers/{profile}/edit', ['as' => 'profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@edit']);
 
 # Users
 Route::resource('users', 'UsersController', ['only' => ['store']]);

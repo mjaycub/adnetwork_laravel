@@ -89,6 +89,8 @@ class UsersController extends Controller {
 		$user->password = Hash::make(Input::get('password'));
 		$user->save();
 
+		$email = Input::get('email');
+
 		$profileInfo = ['user_id' => '$user->id', 'bio' => ''];
 		$user->profile()->save(new Profile($profileInfo));
 
@@ -117,7 +119,7 @@ class UsersController extends Controller {
 		
 		Mail::send('email.verify', ['user' => $user], function($message) {
            	$message->from( 'info@bluence.com', 'Bluence Registration' );
-            $message->to('themarkjacob@gmail.com')->subject('Verify your email address for Bluence!');
+            $message->to(Input::get('email'))->subject('Verify your email address for Bluence!');
         });
 
         Session::flash('message', 'Thanks for signing up! Please check your email for your confirmation link.'); 

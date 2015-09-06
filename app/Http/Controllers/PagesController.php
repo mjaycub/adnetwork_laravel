@@ -37,7 +37,7 @@ class PagesController extends Controller {
 
 			Session::flash('message', 'Your account does not have permission to view that page. If you believe this is a mistake please contact support immediately.'); 
 			Session::flash('alert-class', 'alert-danger'); 
-        	return redirect('/');
+        	return redirect('/login');
 		}
 	
 

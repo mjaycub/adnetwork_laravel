@@ -16,6 +16,7 @@ class SessionsController extends Controller{
 		{
 			return Redirect::to('/about'); // temporary redirect
 		}
+
 		return View::make('sessions.create');
 	}
 
