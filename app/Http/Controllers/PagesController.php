@@ -26,13 +26,20 @@ class PagesController extends Controller {
 	{
 		if (!Auth::user()->hasRole('creator'))
 		{
-			if(Auth::user()->hasRole('advertiser'))
+			if(Auth::user()->hasRole('brand'))
 			{
 				# RE-DIRECTING - If advertisers go to /dashboard/ this could also be a logged error instead of re-direct.
 				# Advertiser users should NOT be following any links to /dashboard/ but instead /addash/ (or relevant URL)
 				Session::flash('message', 'You were redirected to the advertiser dashboard, which is located at bluence.com/addash. If this is a mistake please contact support.'); # URL MOST LIKELY CHANGING
 				Session::flash('alert-class', 'alert-warning'); 
 				return Redirect::to('/addash');
+			}
+
+			
+			if(Auth::user()->hasRole('administrator'))
+			{
+				#Admins can access the dash
+				return view('addash');
 			}
 
 			Session::flash('message', 'Your account does not have permission to view that page. If you believe this is a mistake please contact support immediately.'); 
@@ -95,7 +102,7 @@ class PagesController extends Controller {
 
 		$advertisers = User::whereHas('roles', function($q)
 		{
-        	$q->where('name', 'advertiser');
+        	$q->where('name', 'brand');
     	}
 		)->get();
 
@@ -125,8 +132,23 @@ class PagesController extends Controller {
 
 	public function addash()
 	{
-		if (!Auth::user()->hasRole('advertiser'))
+		if (!Auth::user()->hasRole('brand'))
 		{
+			if(Auth::user()->hasRole('creator'))
+			{
+				# RE-DIRECTING - If creators go to /addash/ this could also be a logged error instead of re-direct.
+				# Creators users should NOT be following any links to /addash/ but instead /dashboard/ (or relevant URL)
+				Session::flash('message', 'You were redirected to the user dashboard, which is located at bluence.com/dashboard. If this is a mistake please contact support.');
+				Session::flash('alert-class', 'alert-warning'); 
+				return Redirect::to('/dashboard');
+			}
+
+			if(Auth::user()->hasRole('administrator'))
+			{
+				#Admins can access the dash
+				return view('addash');
+			}
+
 			Session::flash('message', 'Your account does not have permission to view that page. If you believe this is a mistake please contact support immediately.'); 
 			Session::flash('alert-class', 'alert-danger'); 
         	return redirect('/');
@@ -149,7 +171,7 @@ class PagesController extends Controller {
 
 		$advertisers = User::whereHas('roles', function($q)
 		{
-        	$q->where('name', 'advertiser');
+        	$q->where('name', 'brand');
     	}
 		)->get();
 		return view('admin')->with('fetchedRoles', $allRoles)->with('fetchedUsers', $allUsers)->with('advertisers', $advertisers);

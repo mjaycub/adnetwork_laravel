@@ -69,9 +69,9 @@ Route::resource('profile', 'ProfilesController', ['only' => ['edit', 'update']])
 Route::get('/creators/{profile}/', ['as' => 'users.show', 'middleware' => 'auth', 'uses' => 'UsersController@show']);
 Route::get('/creators/{profile}/edit', ['as' => 'profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@edit']);
 
-# Advetiser Profile Edit
-Route::get('/brands/{profile}', ['middleware' => 'auth', 'uses' => 'PagesController@adProfile']);
-Route::get('/brands/{profile}/edit', ['as' => 'ad_profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@ad_edit']);
+# Brand Profile Edit
+Route::get('/brands/{profile}', ['middleware' => 'auth', 'uses' => 'UsersController@show']);
+Route::get('/brands/{profile}/edit', ['as' => 'ad_profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@edit']);
 
 # Users
 Route::resource('users', 'UsersController', ['only' => ['store']]);

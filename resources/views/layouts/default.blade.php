@@ -50,7 +50,7 @@
 					@if (Auth::guest())
 						<li><a href="/login">Login</a></li>
 						<li><a href="/register">Register</a></li>
-					@elseif(Auth::user()->username) <!-- Creator Menu -->
+					@elseif(Auth::user()->hasRole('creator')) <!-- Creator Menu -->
 					<li>
 						<button type="button" class="btn btn-default" aria-label="inbox" onclick="location.href='/inbox/'">
 					 		<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
@@ -64,22 +64,34 @@
 								<li><a href="/logout">Logout</a></li>
 							</ul>
 						</li>
-					@elseif(Auth::user()->company) <!-- Advertiser Menu -->
+					@elseif(Auth::user()->hasRole('brand')) <!-- Advertiser Menu -->
 					<li>
 						<button type="button" class="btn btn-default" aria-label="inbox" onclick="location.href='/inbox/'">
 					 		<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
 						</button>
 
 					</li>
-					<li><a href="{{'/brands/'.Auth::user()->company}}">Your Profile</a></li>
+					<li><a href="{{'/brands/'.Auth::user()->username}}">Your Profile</a></li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->company }} <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="/logout">Logout</a></li>
 							</ul>
 						</li>
 					@else
-					<li><a href="#">ERROR</a></li>
+					<li><a href="#">No Type Found.</a></li>
+					<li>
+						<button type="button" class="btn btn-default" aria-label="inbox" onclick="location.href='/inbox/'">
+					 		<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
+						</button>
+
+					</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
 					@endif
 				</ul>
 			</div>

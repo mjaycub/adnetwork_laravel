@@ -3,12 +3,14 @@
 @section('content')
 	@if(Session::has('message'))
 		<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-	@else
+	@endif
 
-		@if ($user->username == NULL )
-			<h3>ADVERTISER PROFILE DETECTED</h3>
-		@else
+		@if($user->hasRole("brand"))
+			<h3>BRAND PROFILE DETECTED</h3>
+		@elseif($user->hasRole("creator"))
 			<h3>CREATOR PROFILE DETECTED</h3>
+		@else
+			<h3>Unknown Profile....</h3>
 		@endif
 
 			<h1>Profile</h1>
@@ -16,17 +18,12 @@
 
 			@if (Auth::check())
 				@if( Auth::user()->id == $user->id)
-					@if ($user->username == NULL )
-						<h3> {!! link_to_route('ad_profile.edit', 'Edit Your Profile', $user->company) !!} </h3>
-					@else
-						<h3> {!! link_to_route('profile.edit', 'Edit Your Profile', $user->username) !!} </h3>
-					@endif
-					
+					<h3> {!! link_to_route('profile.edit', 'Edit Your Profile', $user->username) !!} </h3>
 				@endif
 			@endif
 
 
-			@if ($user->username == NULL )
+			@if ($user->hasRole("brand"))
 				<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal2" data-backdrop="false">Propose an Offer</button>
 			@else
 				<button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal1" data-backdrop="false">Make an Offer</button>
@@ -171,8 +168,6 @@
 					<li>{!! link_to('http://instagram.com/' . $user->Profile->instagram_username, 'Instagram') !!}</li>
 				@endif
 			</div>
-		
-	@endif
 
 	
 

@@ -7,7 +7,7 @@
         "lname": "Smith",
         "email": "test5@example.com",
         "created_at": "2015-05-25 18:21:45",
-        "updated_at": "2015-09-09 14:16:39",
+        "updated_at": "2015-10-07 10:57:09",
         "confirmed": "1",
         "confirmation_code": null
     },
@@ -19,13 +19,13 @@
         "lname": "",
         "email": "test9@example.com",
         "created_at": "2015-06-09 20:02:23",
-        "updated_at": "2015-06-17 19:18:15",
+        "updated_at": "2015-11-01 02:17:26",
         "confirmed": "1",
         "confirmation_code": null
     },
     {
         "id": "21",
-        "username": null,
+        "username": "coke",
         "company": "Coke",
         "fname": "Jack",
         "lname": "Milton",
@@ -37,7 +37,7 @@
     },
     {
         "id": "36",
-        "username": null,
+        "username": "test16",
         "company": "test16",
         "fname": "test",
         "lname": "ad",
@@ -46,5 +46,29 @@
         "updated_at": "2015-09-09 14:35:01",
         "confirmed": "1",
         "confirmation_code": null
+    },
+    {
+        "id": "45",
+        "username": "testbrand3",
+        "company": null,
+        "fname": "test",
+        "lname": "t",
+        "email": "testbrand3@example.com",
+        "created_at": "2015-11-01 01:17:53",
+        "updated_at": "2015-11-01 01:17:53",
+        "confirmed": "0",
+        "confirmation_code": "SIf9JBmOzbhrDMRFKKZA9IHPCUFQjd"
+    },
+    {
+        "id": "46",
+        "username": "test606",
+        "company": null,
+        "fname": "test",
+        "lname": "test",
+        "email": "test606@example.com",
+        "created_at": "2015-11-01 01:52:39",
+        "updated_at": "2015-11-01 01:52:39",
+        "confirmed": "0",
+        "confirmation_code": "nCfyV5n0qbsD2iT8lWclxcabW93I1F"
     }
 ]
