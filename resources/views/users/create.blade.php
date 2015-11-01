@@ -55,6 +55,8 @@
 			{!! $errors->first('password', '<span class=error>:message</span>') !!}
 		</div>
 
+		{!! Form::hidden('user_type', 'creator') !!}
+
 		<div>
 			{!! Form::submit('Create User', ['class' => 'btn btn-primary']) !!}
 		</div>

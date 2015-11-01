@@ -16,7 +16,12 @@
 
 			@if (Auth::check())
 				@if( Auth::user()->id == $user->id)
-					<h3> {!! link_to_route('profile.edit', 'Edit Your Profile', $user->username) !!} </h3>
+					@if ($user->username == NULL )
+						<h3> {!! link_to_route('ad_profile.edit', 'Edit Your Profile', $user->company) !!} </h3>
+					@else
+						<h3> {!! link_to_route('profile.edit', 'Edit Your Profile', $user->username) !!} </h3>
+					@endif
+					
 				@endif
 			@endif
 

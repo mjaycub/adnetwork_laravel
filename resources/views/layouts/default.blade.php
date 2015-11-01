@@ -41,7 +41,7 @@
 					<li><a href="/about">About</a></li>
 					<li><a href="/admin">Admin</a></li>
 					<li><a href="/creators">Creators</a></li>
-					<li><a href="/advertisers">Advertisers</a></li>
+					<li><a href="/brands">Brands</a></li>
 					<li><a href="/dashboard">Dashboard</a></li>
 					<li><a href="/addash">Ad Dash</a></li>
 				</ul>
@@ -71,7 +71,7 @@
 						</button>
 
 					</li>
-					<li><a href="{{'/advertisers/'.Auth::user()->company}}">Your Profile</a></li>
+					<li><a href="{{'/brands/'.Auth::user()->company}}">Your Profile</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->company }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">

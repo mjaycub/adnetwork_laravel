@@ -27,12 +27,12 @@
 		</div> 
 
 		<div class="form-group">
-			{!! Form::label('company', 'Company:') !!}
-			<p>This will be used for your company's profile page. For example: the URL for username <i>'AnnesBakery'</i> would be <i>'bluence.com/advertisers/AnnesBakery'</i> .</p>
+			{!! Form::label('username', 'Company:') !!}
+			<p>This will be used for your company's profile page. For example: the URL for username <i>'AnnesBakery'</i> would be <i>'bluence.com/brands/AnnesBakery'</i> .</p>
 			<p>Your company's profile page is private, it will only be viewable by you and users with access to our platform.</p>
 			<p>Please choose the name of your Company or Website (without the .com/.org/etc..).</p>
-			{!! Form::text('company', null, ['class' => 'form-control', 'required' => 'required']) !!}
-			{!! $errors->first('company', '<span class=error>:message</span>') !!}
+			{!! Form::text('username', null, ['class' => 'form-control', 'required' => 'required']) !!}
+			{!! $errors->first('username', '<span class=error>:message</span>') !!}
 		</div>
 		
 		<div class="form-group">
@@ -55,6 +55,8 @@
 			{!! Form::password('password_confirmation', array('placeholder'=>'', 'class'=>'form-control', 'required' => 'required' ) ) !!}
 			{!! $errors->first('password', '<span class=error>:message</span>') !!}
 		</div>
+
+		{!! Form::hidden('user_type', 'brand') !!}
 
 		<div>
 			{!! Form::submit('Create User', ['class' => 'btn btn-primary']) !!}

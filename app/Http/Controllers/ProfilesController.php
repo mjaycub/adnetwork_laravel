@@ -65,9 +65,38 @@ class ProfilesController extends Controller {
 
 	}
 
+	public function ad_edit($brand)
+	{
+		//user::whereBRAND($brand)->firstOrFail();
+		
+		//$user = User::whereUsername($username)->firstOrFail();
+		$user = User::whereCompany($brand)->firstOrFail();
+
+		if(Auth::user()->id == $user->id)
+		{
+			return View::make('profiles.edit')->withUser($user);
+		}
+		else
+		{
+			Session::flash('message', 'You may only edit your own profile silly.'); 
+			Session::flash('alert-class', 'alert-warning'); 
+
+		return Redirect::back();
+		}
+
+	}
+
 	public function update($username)
 	{
 		$user = User::whereUsername($username)->firstOrFail();
+
+		if(!Auth::user()->id == $user->id)
+		{
+			Session::flash('message', 'You may only edit your own profile silly.'); 
+			Session::flash('alert-class', 'alert-warning'); 
+
+			return Redirect::back();
+		}
 
 		if (Input::has('fname'))
 		{

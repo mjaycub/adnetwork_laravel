@@ -137,11 +137,11 @@ class PagesController extends Controller {
 
 	public function admin()
 	{
-		if (!Auth::user()->hasRole('administrator'))
+		if ((!Auth::user()->hasRole('administrator')) && (!Auth::user()->hasRole('owner')))
 		{
 			Session::flash('message', 'Your account does not have permission to view that page. If you believe this is a mistake please contact support immediately.'); 
 			Session::flash('alert-class', 'alert-danger'); 
-        	return redirect('/');
+        	return redirect('/dashboard');
 		}
 
 		$allUsers = DB::table('users')->get();
@@ -154,4 +154,16 @@ class PagesController extends Controller {
 		)->get();
 		return view('admin')->with('fetchedRoles', $allRoles)->with('fetchedUsers', $allUsers)->with('advertisers', $advertisers);
 	}
+
+	public function oldAdvertisers()
+	{
+		return Redirect::to('/brands/'); 
+	}
+
+		public function oldadCreate()
+	{
+		return Redirect::to('/brands/create'); 
+	}
+
+
 }

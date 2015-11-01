@@ -8,8 +8,8 @@
         "email": "test5@example.com",
         "password": "$2y$10$nh9vlQPAhajYL3uxxTwNVeXxZitHbjY97MOIzGrPAhObMJKJqxRPy",
         "created_at": "2015-05-25 18:21:45",
-        "updated_at": "2015-09-06 21:07:55",
-        "remember_token": "lwJJATrDcS7u7wuxpJTYGJiWWEkHuEB8AMPJ5irIkoiUMJVMjZMEy6CHUBaJ",
+        "updated_at": "2015-09-09 14:16:39",
+        "remember_token": "wtw6sucpqv8Rc5VJJU844qm75oStmaH7xvFT7YoqJ9PAlopTh3t4j2gfVcY6",
         "confirmed": "1",
         "confirmation_code": null
     },
@@ -22,8 +22,8 @@
         "email": "test6@example.com",
         "password": "$2y$10$otA\/jvvWQNxfI2JKoqGbQ.b3FdtXYnZ40dKTIBWXACJCfWE5W5eJy",
         "created_at": "2015-05-25 19:47:06",
-        "updated_at": "2015-09-06 21:04:26",
-        "remember_token": "xK6FVZKcYRkpra1IWPAIn735ySU7kE0t2ovvlpwa2wIbzIPRmTNna0kPoQbo",
+        "updated_at": "2015-09-06 21:42:51",
+        "remember_token": "RwuWVzug21eScZQULFO5MIfMzJQ8bvaoQsRqESGR7FqnyuQOtlsABntkLozQ",
         "confirmed": "1",
         "confirmation_code": null
     },
@@ -120,8 +120,8 @@
         "email": "test16@example.com",
         "password": "$2y$10$nxpP\/yr5NHmkgHlbRD4KTevE4RTzTUhY.3s\/LAKRfOhCCvrlulcfG",
         "created_at": "2015-06-23 22:35:33",
-        "updated_at": "2015-07-29 21:39:56",
-        "remember_token": "NMFxUUAkg8hlnlDms76kRC8bzPNSiZlbMrzepTMAZgJOb2wD174aREPH3HOU",
+        "updated_at": "2015-09-09 14:35:01",
+        "remember_token": "gBgSR8hdPehjEplhyR2Z8c5Po7KoAJQblPeC8kXNjYh276nw421Ri5z405OZ",
         "confirmed": "1",
         "confirmation_code": null
     },

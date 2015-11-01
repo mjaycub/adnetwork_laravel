@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
-    <link href="http://bluence.com/css/landing-page.css?v=<?=time();?>" rel="stylesheet">
+    <link href="http://bluence.com/css/landing-page.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -169,7 +169,7 @@
 
 
         </div>
-         <h4 class="centered mb">Numbers represent the <b>daily activity</b> on each social network</h4>
+        <h4 class="centered mb">Numbers represent the <b>daily activity</b> on each social network</h4>
         </div><!-- /.container -->
     </section>
     <!-- //SOCIAL STATS -->

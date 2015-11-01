@@ -53,8 +53,12 @@ Route::get('/addash', ['middleware' => 'auth', 'uses' => 'PagesController@addash
 Route::get('/dashboard', ['middleware' => 'auth', 'uses' => 'PagesController@dashboard']);
 
 # Advertisers
-Route::get('/advertisers', ['middleware' => 'auth', 'uses' => 'PagesController@advertisers']);
-Route::get('/advertisers/create', 'PagesController@adCreate');
+Route::get('/advertisers', ['middleware' => 'auth', 'uses' => 'PagesController@oldAdvertisers']);
+Route::get('/advertisers/create', 'PagesController@oldadCreate');
+
+#Brands (previously Advertsers)
+Route::get('/brands', ['middleware' => 'auth', 'uses' => 'PagesController@advertisers']);
+Route::get('/brands/create', 'PagesController@adCreate');
 
 # Creators
 Route::get('/creators', ['as' => 'creators.index', 'middleware' => 'auth', 'uses' => 'UsersController@index']);
@@ -66,8 +70,8 @@ Route::get('/creators/{profile}/', ['as' => 'users.show', 'middleware' => 'auth'
 Route::get('/creators/{profile}/edit', ['as' => 'profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@edit']);
 
 # Advetiser Profile Edit
-Route::get('/advertisers/{profile}', ['middleware' => 'auth', 'uses' => 'PagesController@adProfile']);
-Route::get('/advertisers/{profile}/edit', ['as' => 'profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@edit']);
+Route::get('/brands/{profile}', ['middleware' => 'auth', 'uses' => 'PagesController@adProfile']);
+Route::get('/brands/{profile}/edit', ['as' => 'ad_profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@ad_edit']);
 
 # Users
 Route::resource('users', 'UsersController', ['only' => ['store']]);

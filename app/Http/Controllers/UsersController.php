@@ -85,35 +85,29 @@ class UsersController extends Controller {
 		$user->lname = Input::get('lname');
 		$user->email = Input::get('email');
 		$user->username = Input::get('username');
-		$user->company = Input::get('company');
 		$user->password = Hash::make(Input::get('password'));
 		$user->save();
 
+		$user_type = Input::get('user_type');
 		$email = Input::get('email');
 
 		$profileInfo = ['user_id' => '$user->id', 'bio' => ''];
 		$user->profile()->save(new Profile($profileInfo));
 
-
-		/* Assuming if input has:
-		* 	- USERNAME => content creator
-		*	- COMPANY  => advertiser
-		* 	- else	   => member
-		*/
-		if($user->username != NULL)
+		if($user_type=="creator")
 		{
 			$user->assignRole(5); // assigned content creator role
 		}
-		else if($user->company != NULL)
+		else if($user_type=="brand")
 		{
-			$user->assignRole(4); // assigned advertiser role
+			$user->assignRole(4); // assigned advertiser/brand role
 		}
 		else
 		{
-			$user->assignRole(1); // assigned member role by default
+			$user->assignRole(1); // assigned member role
 		}
-		
 
+		
 		$user->save();
 
 		
@@ -128,6 +122,7 @@ class UsersController extends Controller {
 		return Redirect::to('/login');
 		
 	}
+
 
 	public function show($username)
 	{
