@@ -46,8 +46,8 @@
       <table data-toggle="table" data-url='data3.json' data-cache="false">
         <thead>
             <tr>
-                <th data-field="id" data-sortable="true">Advertiser ID</th>
-                <th data-field="company" data-sortable="true" data-formatter="AdLinkFormatter">Company</th>
+                <th data-field="id" data-sortable="true">Brand ID</th>
+                <th data-field="username" data-sortable="true" data-formatter="LinkFormatter">Username</th>
                 <th data-field="fname" data-sortable="true">First Name</th>
                 <th data-field="lname" data-sortable="true">Last Name</th>
                 <th data-field="email" data-sortable="true">Email Address</th>
@@ -102,13 +102,9 @@ function RoleFormatter(value, row, index) {
     return "Unknown - notify mark@bluence.com .";
 }
 
-function AdLinkFormatter(value, row, index) {
-    var advertiserURL = '/advertisers/' + value;
-  return "<a href='"+advertiserURL+"'>"+value+"</a>";
-}
 
 function LinkFormatter(value, row, index) {
-    var userURL = '/users/' + value;
+    var userURL = '/profile/' + value;
   return "<a href='"+userURL+"'>"+value+"</a>";
 }
 </script>

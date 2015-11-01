@@ -57,7 +57,7 @@
 						</button>
 
 					</li>
-					<li><a href="{{'/creators/'.Auth::user()->username}}">Your Profile</a></li>
+					<li><a href="{{'/profile/'.Auth::user()->username}}">Your Profile</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
@@ -71,7 +71,7 @@
 						</button>
 
 					</li>
-					<li><a href="{{'/brands/'.Auth::user()->username}}">Your Profile</a></li>
+					<li><a href="{{'/profile/'.Auth::user()->username}}">Your Profile</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">

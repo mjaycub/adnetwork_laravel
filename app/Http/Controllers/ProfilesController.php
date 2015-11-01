@@ -112,8 +112,10 @@ class ProfilesController extends Controller {
 		
 		$input = Input::only('bio', 'location', 'youtube_username', 'twitter_username', 'instagram_username', 'facebook_page_name', 'vine_username');
 
-		Session::flash('message', 'Your profile has been updated! '); 
-		Session::flash('alert-class', 'alert-info'); 
+
+		$msg = 'Your <a href="{{/profile/.Auth::user()->username}}">profile</a> has been updated! ';
+
+		Session::flash('message', 'messages.profile_update'); 
 
 		if (count($user->profile))
 		{   

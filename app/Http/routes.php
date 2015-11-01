@@ -64,14 +64,14 @@ Route::get('/brands/create', 'PagesController@adCreate');
 Route::get('/creators', ['as' => 'creators.index', 'middleware' => 'auth', 'uses' => 'UsersController@index']);
 Route::get('/creators/create', 'UsersController@create');
 
-# Creator Profile Edit
+# Profile Edit
 Route::resource('profile', 'ProfilesController', ['only' => ['edit', 'update']]);
-Route::get('/creators/{profile}/', ['as' => 'users.show', 'middleware' => 'auth', 'uses' => 'UsersController@show']);
-Route::get('/creators/{profile}/edit', ['as' => 'profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@edit']);
+Route::get('/profile/{profile}/', ['as' => 'users.show', 'middleware' => 'auth', 'uses' => 'UsersController@show']);
+Route::get('/profile/{profile}/edit', ['as' => 'profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@edit']);
 
 # Brand Profile Edit
-Route::get('/brands/{profile}', ['middleware' => 'auth', 'uses' => 'UsersController@show']);
-Route::get('/brands/{profile}/edit', ['as' => 'ad_profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@edit']);
+#Route::get('/brands/{profile}', ['middleware' => 'auth', 'uses' => 'UsersController@show']);
+#Route::get('/brands/{profile}/edit', ['as' => 'ad_profile.edit', 'middleware' => 'auth', 'uses' => 'ProfilesController@edit']);
 
 # Users
 Route::resource('users', 'UsersController', ['only' => ['store']]);

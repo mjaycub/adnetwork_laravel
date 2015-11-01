@@ -22,8 +22,8 @@
         "email": "test6@example.com",
         "password": "$2y$10$otA\/jvvWQNxfI2JKoqGbQ.b3FdtXYnZ40dKTIBWXACJCfWE5W5eJy",
         "created_at": "2015-05-25 19:47:06",
-        "updated_at": "2015-11-01 01:56:34",
-        "remember_token": "uPg8BKT29lFM1XK8Z9kypdxAnAbrUdWHwDoYWKXCXQGhMYN8shu5Uqc1mBHZ",
+        "updated_at": "2015-11-01 13:26:52",
+        "remember_token": "H9C7dEN0fdovEBqwYCZkoHIPwWAfXDY7z5lUwzQZTtefselbmyQSZZ36X3bl",
         "confirmed": "1",
         "confirmation_code": null
     },
