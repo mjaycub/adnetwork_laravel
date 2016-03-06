@@ -78,6 +78,20 @@
 								<li><a href="/logout">Logout</a></li>
 							</ul>
 						</li>
+					@elseif(Auth::user()->hasRole('administrator')) <!-- Admin Menu -->
+					<li>
+						<button type="button" class="btn btn-default" aria-label="inbox" onclick="location.href='/inbox/'">
+					 		<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
+						</button>
+
+					</li>
+					<li><a href="/dashboard">Dashboard</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="/logout">Logout</a></li>
+							</ul>
+						</li>
 					@else
 					<li><a href="#">No Type Found.</a></li>
 					<li>

@@ -29,7 +29,7 @@
             {!! Session::get('error_message') !!}
         </div>
     @endif
-
+    
     @if($threads->count() > 0)
         @foreach($threads as $thread)
 
@@ -48,7 +48,7 @@
 
 	       
 
-	        <hr>
+	        <hr> 
 
         	<!-- All messages user is involved in 
 	        @foreach($thread->messages as $message)
@@ -69,4 +69,5 @@
     @else
         <p>Your inbox is empty :) </p>
     @endif
+
 @stop
