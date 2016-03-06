@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use View;
+use Redirect;
 
 
 class MessagesController extends Controller
@@ -111,6 +112,10 @@ class MessagesController extends Controller
                 'subject' => $input['subject'],
             ]
         );
+
+        // strip HTML tags
+        $input['message'] = strip_tags($input['message']);
+
         // Message
         Message::create(
             [
