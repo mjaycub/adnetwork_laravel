@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/bluence-laravel":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/bluence-laravel","hostpath":"/Users/mark/Sites/bluence_laravel","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/mark/Sites/bluence_laravel","disabled":false,"__vagrantfile":true}}}
