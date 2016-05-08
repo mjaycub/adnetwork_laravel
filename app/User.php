@@ -9,6 +9,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Validator;
 use \App\Role as Role;
+use DB;
 use Cmgmyr\Messenger\Traits\Messagable;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
@@ -100,5 +101,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		}
 		return false;
 	}
+
+    public function listOffers()
+    {
+    	$offers = DB::table('offers')->where('creator_id', $this->id)->get();
+    	return $offers;
+    }
+
+    public function listOfferForThread($thread_id)
+    {
+    	$offer = DB::table('offers')->where('thread_id', $thread_id)->get();
+    	return $offer;
+    }
 
 }

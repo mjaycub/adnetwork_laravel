@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 use App\User;
+use App\Offer;
 use Carbon\Carbon;
 use Cmgmyr\Messenger\Models\Thread;
 use Cmgmyr\Messenger\Models\Message;
@@ -77,8 +78,13 @@ class MessagesController extends Controller
 
         if($thread->hasParticipant($userId))
         {
-             $thread->markAsRead($userId);
-             return view('messenger.show', compact('thread', 'userId'));
+            $offers = Auth::user()->listOfferForThread($thread->id);
+            $offer = null;
+            if($offers) {
+                $offer = $offers[0];
+            }
+            $thread->markAsRead($userId);
+            return view('messenger.show', compact('thread', 'userId', 'offer'));
         }
         else
         {
@@ -86,8 +92,22 @@ class MessagesController extends Controller
             Session::flash('alert-class', 'alert-danger'); 
             return redirect('/inbox');
         }
-        //$users = User::whereNotIn('id', $thread->participantsUserIds($userId))->get();
-       
+
+        /*
+
+             // Offer
+            Offer::create(
+                [
+                    'title' => "Test",
+                    'advertiser_id'   => Auth::user()->id,
+                    'creator_id'    => Auth::user()->id,
+                    'currency' => "USD",
+                    'amount' => 10000,
+                    'description' => "Test descrip",
+                    'status' => 1
+                ]
+            );
+            */
     }
     /**
      * Creates a new message thread

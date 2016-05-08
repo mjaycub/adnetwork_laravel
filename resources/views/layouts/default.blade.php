@@ -93,7 +93,7 @@
 							</ul>
 						</li>
 					@else
-					<li><a href="#">No Type Found.</a></li>
+					<li><a href="{{'/profile/'.Auth::user()->username}}">No Type Found.</a></li>
 					<li>
 						<button type="button" class="btn btn-default" aria-label="inbox" onclick="location.href='/inbox/'">
 					 		<span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>

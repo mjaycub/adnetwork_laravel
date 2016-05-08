@@ -46,6 +46,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'messages'], function () {
     Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
 });
 
+Route::put('{thread_id}', ['as' => 'offers.store', 'uses' => 'OffersController@store']);
+
 Route::get('/inbox', ['middleware' => 'auth', 'uses' => 'MessagesController@inbox']);
 
 # Dashboards
